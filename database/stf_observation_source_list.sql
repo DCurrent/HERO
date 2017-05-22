@@ -1,7 +1,3 @@
-USE [ehsinfo]
-GO
-
-/****** Object:  StoredProcedure [dbo].[stf_observation_source_list]    Script Date: 5/22/2017 9:32:14 AM ******/
 SET ANSI_NULLS ON
 GO
 
