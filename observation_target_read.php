@@ -179,30 +179,14 @@
 	$query->get_line_params()->set_class_name($primary_data_class);	
 	if($query->get_row_exists() === TRUE) $_main_data = $query->get_line_object();	
 	
-	// Sub table generation
-	// Source lists
-		// Set up primary query with parameters and arguments.
-		$query->set_sql('{call stf_observation_source_list(@param_page_current = ?,
-										@param_page_rows 	= ?,
-										@param_sort_field 	= ?,
-										@param_sort_order 	= ?,
-										@param_date_start	= ?,
-										@param_date_end		= ?,
-										@param_status		= ?)}');
-		$params = array(array(-1, 		SQLSRV_PARAM_IN),
-						array(NULL, 	SQLSRV_PARAM_IN),
-					   	array(NULL, 	SQLSRV_PARAM_IN),
-					   	array(NULL, 	SQLSRV_PARAM_IN),
-					   	array(NULL, 	SQLSRV_PARAM_IN),
-					   	array(NULL, 	SQLSRV_PARAM_IN),
-					   	array(1, 	SQLSRV_PARAM_IN));
-
-		// Apply arguments and execute query.
-		$query->set_params($params);
-		$query->query();
-
-		$query->get_line_params()->set_class_name('\data\ObservationSource');	
-		if($query->get_row_exists() === TRUE) $_list_observation_source = $query->get_line_object_list();	
+	// Sub - Party.
+	$query->get_next_result();
+	
+	$query->get_line_params()->set_class_name('\data\ObservationSource');
+	
+	$_list_observation_source = new SplDoublyLinkedList();
+	if($query->get_row_exists()) $_list_observation_source = $query->get_line_object_list();
+	
 ?>
 
 
