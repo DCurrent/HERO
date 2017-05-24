@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name=".gitattributes" server="ar08.uky.edu//ehs/" local="131401102819770217" remote="131400987000000000" Dst="2" />
+<file name=".gitignore" server="ar08.uky.edu//ehs/" local="131401102819810311" remote="131400987000000000" Dst="2" />
+<file name="common_entry.php" server="ar08.uky.edu//ehs/" local="131401102820547726" remote="131400987000000000" Dst="2" />
+<file name="common_entry_list.php" server="ar08.uky.edu//ehs/" local="131401102821852079" remote="131400987000000000" Dst="2" />
+<file name="common_inspection.php" server="ar08.uky.edu//ehs/" local="131401102823479486" remote="131400987000000000" Dst="2" />
+<file name="common_list.php" server="ar08.uky.edu//ehs/" local="131401102824352877" remote="131400987000000000" Dst="2" />
+<file name="common_version_list.php" server="ar08.uky.edu//ehs/" local="131401102825216143" remote="131400987000000000" Dst="2" />
+<file name="config_common_entry.php" server="ar08.uky.edu//ehs/" local="131401102825824274" remote="131400987000000000" Dst="2" />
+<file name="config_common_entry_list.php" server="ar08.uky.edu//ehs/" local="131401102826659474" remote="131400987000000000" Dst="2" />
+<file name="config_common_entry_test.php" server="ar08.uky.edu//ehs/" local="131401102827272382" remote="131400987000000000" Dst="2" />
+<file name="index.php" server="ar08.uky.edu//ehs/" local="131401103562158876" remote="131400987000000000" Dst="2" />
+<file name="model_location.php" server="ar08.uky.edu//ehs/" local="131401102828495889" remote="131400987000000000" Dst="2" />
+<file name="observation_source_list.php" server="ar08.uky.edu//ehs/" local="131401102829358428" remote="131400987000000000" Dst="2" />
+<file name="observation_source_read.php" server="ar08.uky.edu//ehs/" local="131401102830021737" remote="131400987000000000" Dst="2" />
+<file name="observation_target_list.php" server="ar08.uky.edu//ehs/" local="131401102831035296" remote="131400987000000000" Dst="2" />
+<file name="observation_target_read.php" server="ar08.uky.edu//ehs/" local="131401102831826475" remote="131400987000000000" Dst="2" />
+<file name="README.md" server="ar08.uky.edu//ehs/" local="131401102819825348" remote="131400987000000000" Dst="2" />
+</dwsync>

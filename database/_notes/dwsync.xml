@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="blank.md" server="ar08.uky.edu//ehs/" local="131401102827287572" remote="131400985200000000" Dst="2" />
+<file name="stf_account_lookup.sql" server="ar08.uky.edu//ehs/" local="131401102827332708" remote="131400985200000000" Dst="2" />
+<file name="stf_master_update.sql" server="ar08.uky.edu//ehs/" local="131401102827342865" remote="131400985200000000" Dst="2" />
+<file name="stf_master_version_list.sql" server="ar08.uky.edu//ehs/" local="131401102827352587" remote="131400985200000000" Dst="2" />
+<file name="stf_observation_source_list.sql" server="ar08.uky.edu//ehs/" local="131401102827362622" remote="131400985200000000" Dst="2" />
+<file name="stf_observation_source_read.sql" server="ar08.uky.edu//ehs/" local="131401102827442926" remote="131400985200000000" Dst="2" />
+<file name="stf_observation_source_update.sql" server="ar08.uky.edu//ehs/" local="131401102827452949" remote="131400985200000000" Dst="2" />
+<file name="stf_observation_target_read.sql" server="ar08.uky.edu//ehs/" local="131401102827528516" remote="131400985200000000" Dst="2" />
+<file name="stf_session_clean.sql" server="ar08.uky.edu//ehs/" local="131401102827539135" remote="131400985200000000" Dst="2" />
+<file name="stf_session_destroy.sql" server="ar08.uky.edu//ehs/" local="131401102827580340" remote="131400985200000000" Dst="2" />
+<file name="stf_session_get.sql" server="ar08.uky.edu//ehs/" local="131401102827624947" remote="131400985200000000" Dst="2" />
+<file name="stf_session_set.sql" server="ar08.uky.edu//ehs/" local="131401102827639805" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_checklist.sql" server="ar08.uky.edu//ehs/" local="131401102827649832" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_master.sql" server="ar08.uky.edu//ehs/" local="131401102827680212" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_observation_result.sql" server="ar08.uky.edu//ehs/" local="131401102827689934" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_observation_source.sql" server="ar08.uky.edu//ehs/" local="131401102827700044" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_observation_target_result.sql" server="ar08.uky.edu//ehs/" local="131401102827737682" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_session.sql" server="ar08.uky.edu//ehs/" local="131401102827787764" remote="131400985800000000" Dst="2" />
+<file name="tbl_stf_solution_list.sql" server="ar08.uky.edu//ehs/" local="131401102827802531" remote="131400985800000000" Dst="2" />
+<file name="tvf_get_id_list.sql" server="ar08.uky.edu//ehs/" local="131401102827812566" remote="131400985800000000" Dst="2" />
+</dwsync>
