@@ -180,7 +180,7 @@
             <?php echo $navigation_obj->get_markup_nav(); ?>                                                                                
             <div class="page-header">
                 <h1><?php echo APPLICATION_SETTINGS::NAME; ?></h1>
-                <p class="lead">
+                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, our observation system for tracking potential hazards like slip, trip, and fall conditions. For more information about slips and falls, please see the following video.</p>
 				<?php
 				
 					echo '<!--account:'.$access_obj->get_account().'-->';
@@ -205,13 +205,13 @@
 							echo 'Good evening ';
 						}
 						echo $access_obj->get_name_f();
-				?>! Thank you for using <?php echo APPLICATION_SETTINGS::NAME; ?>.</p>
+				?>, thanks for participating! You can use the navigation menu above to start up a new observation or view any previous observations you have made.</p>
                 <?php
 					}
 					else
 					{
 				?>
-                		<p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>. In order to use <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
+                		<p class="lead">In order to use <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
             		
                     	<p><?php echo $access_obj->dialog(); ?></p>
                     	
