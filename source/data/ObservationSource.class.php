@@ -7,17 +7,20 @@
 		// Accessors.
 		function get_observation();
 		function get_solution();
+		function get_status();
 				
 		// Mutators.
 		function set_observation($value);
-		function set_solution($value);		
+		function set_solution($value);
+		function set_status($value);
 	}	
 	
 	class ObservationSource extends Common implements iObservationSource
 	{
 		protected
 			$observation 	= NULL,
-			$solution	= NULL;
+			$solution		= NULL,
+			$status			= NULL;
 			
 		public function get_observation()
 		{
@@ -27,6 +30,11 @@
 		public function get_solution()
 		{
 			return $this->solution;
+		}
+		
+		public function get_status()
+		{
+			return $this->status;
 		}
 	
 		// Mutators		
@@ -38,6 +46,11 @@
 		public function set_solution($value)
 		{
 			$this->solution = $value;
+		}
+		
+		public function set_status($value)
+		{
+			$this->status = $value;
 		}
 	}
 ?>

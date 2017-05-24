@@ -75,7 +75,8 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle <?php echo $class_add; ?>" data-toggle="dropdown" href="#">Observation<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="<?php echo $this->directory_prime; ?>?id_form=1550&amp;list=1">My Observations</a></li>
+                                    <li><a href="<?php echo $this->directory_prime; ?>/observation_target_list.php">List</a></li>
+                                    <li><a href="<?php echo $this->directory_prime; ?>/observation_target_read.php?id=-1"><span class="glyphicon glyphicon-plus"></span> New Observation</a></li>
                                 </ul>
                             </li>
                            
@@ -86,7 +87,7 @@
                                         <li><a href="<?php echo $this->directory_prime; ?>/config_common_entry_list.php"><?php echo NAV_INDENT; ?>Common Entry Forms</a></li>
                                     <li class="divider"></li>                                	
                                     <li class="dropdown-header">Observations</li>                                    
-                                    	<li><a href="<?php echo $this->directory_prime; ?>/?id_form=1548&amp;list=1"><?php echo NAV_INDENT; ?>Observation Items</a></li>                                    
+                                    	<li><a href="<?php echo $this->directory_prime; ?>/observation_source_list.php"><?php echo NAV_INDENT; ?>Observation Items</a></li>                                    
                                 </ul>
                             </li>
                         </ul>

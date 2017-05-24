@@ -235,6 +235,13 @@
                 <?php
 					}					
 				?>
+           	
+           		<br />
+           		&nbsp;
+           		<p><?php echo APPLICATION_SETTINGS::NAME; ?> is our observation system for tracking potential hazards like Slip, Trip, and Fall conditions. For more information, please see the following video.</p>
+           		<p class="center-block">
+           		<iframe width="560" height="315" src="https://www.youtube.com/embed/Bckj4zErK-Q" frameborder="0" allowfullscreen></iframe>
+            	</p>
             </div> 
                     
             <?php echo $navigation_obj->get_markup_footer(); ?>

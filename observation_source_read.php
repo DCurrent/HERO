@@ -72,7 +72,8 @@
 												@param_label 			= ?,
 												@param_details 			= ?,
 												@param_observation		= ?,
-												@param_solution			= ?)}');
+												@param_solution			= ?,
+												@param_status			= ?)}');
 												
 		$params = array(array('<root><row id="'.$_main_data->get_id().'"/></root>', 		SQLSRV_PARAM_IN),
 					array($access_obj->get_id(), 				SQLSRV_PARAM_IN),
@@ -80,7 +81,8 @@
 					array($_main_data->get_label(), 		SQLSRV_PARAM_IN),						
 					array($_main_data->get_details(),		SQLSRV_PARAM_IN),
 					array($_main_data->get_observation(),	SQLSRV_PARAM_IN),
-					array($_main_data->get_solution(),		SQLSRV_PARAM_IN));
+					array($_main_data->get_solution(),		SQLSRV_PARAM_IN),
+					array($_main_data->get_status(),		SQLSRV_PARAM_IN));
 		
 		//var_dump($params);
 		//exit;
@@ -291,6 +293,14 @@
                             value="<?php echo trim($_main_data->get_label()); ?>">
                     </div>
                 </div> 
+                
+                <div class="form-group">       
+                    <label class="control-label col-sm-2" for="label">Status</label>
+                    <div class="col-sm-10">
+                      	<label class="radio-inline"><input type="radio" name="status" value="0" <?php if(!$_main_data->get_status()) { echo 'checked'; }?>>Inactive</label>
+                       	<label class="radio-inline"><input type="radio" name="status" value="1" <?php if($_main_data->get_status()==1) { echo 'checked'; }?>>Active</label>   
+                    </div>
+                </div>
                 
                 <div class="form-group">       
                     <label class="control-label col-sm-2" for="observation">Observation</label>
