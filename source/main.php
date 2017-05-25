@@ -53,7 +53,7 @@
     spl_autoload_register('portland_load_class');
 	
 	// Replace default session handler.
-	$session_handler = new \dc\session\Session();
+	$session_handler = new \dc\nahoni\Session();
 	session_set_save_handler($session_handler, TRUE);
 	
 	
