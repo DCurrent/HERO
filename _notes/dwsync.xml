@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name=".gitattributes" server="ar08.uky.edu//ehs/" local="131401102819770217" remote="131400987000000000" Dst="2" />
-<file name=".gitignore" server="ar08.uky.edu//ehs/" local="131401102819810311" remote="131400987000000000" Dst="2" />
-<file name="common_entry.php" server="ar08.uky.edu//ehs/" local="131401102820547726" remote="131400987000000000" Dst="2" />
-<file name="common_entry_list.php" server="ar08.uky.edu//ehs/" local="131401102821852079" remote="131400987000000000" Dst="2" />
-<file name="common_inspection.php" server="ar08.uky.edu//ehs/" local="131401102823479486" remote="131400987000000000" Dst="2" />
-<file name="common_list.php" server="ar08.uky.edu//ehs/" local="131401102824352877" remote="131400987000000000" Dst="2" />
-<file name="common_version_list.php" server="ar08.uky.edu//ehs/" local="131401102825216143" remote="131400987000000000" Dst="2" />
-<file name="config_common_entry.php" server="ar08.uky.edu//ehs/" local="131401102825824274" remote="131400987000000000" Dst="2" />
-<file name="config_common_entry_list.php" server="ar08.uky.edu//ehs/" local="131401102826659474" remote="131400987000000000" Dst="2" />
-<file name="config_common_entry_test.php" server="ar08.uky.edu//ehs/" local="131401102827272382" remote="131400987000000000" Dst="2" />
-<file name="index.php" server="ar08.uky.edu//ehs/" local="131401103562158876" remote="131400987000000000" Dst="2" />
-<file name="model_location.php" server="ar08.uky.edu//ehs/" local="131401102828495889" remote="131400987000000000" Dst="2" />
-<file name="observation_source_list.php" server="ar08.uky.edu//ehs/" local="131401102829358428" remote="131400987000000000" Dst="2" />
-<file name="observation_source_read.php" server="ar08.uky.edu//ehs/" local="131401102830021737" remote="131400987000000000" Dst="2" />
-<file name="observation_target_list.php" server="ar08.uky.edu//ehs/" local="131401102831035296" remote="131400987000000000" Dst="2" />
-<file name="observation_target_read.php" server="ar08.uky.edu//ehs/" local="131401102831826475" remote="131400987000000000" Dst="2" />
-<file name="README.md" server="ar08.uky.edu//ehs/" local="131401102819825348" remote="131400987000000000" Dst="2" />
+<file name="common_entry.php" server="ar08.uky.edu//ehs/" local="131398832988620716" remote="131398749000000000" Dst="2" />
+<file name="common_entry_list.php" server="ar08.uky.edu//ehs/" local="131398832990636974" remote="131398749000000000" Dst="2" />
+<file name="common_inspection.php" server="ar08.uky.edu//ehs/" local="131398832993475187" remote="131398749000000000" Dst="2" />
+<file name="common_list.php" server="ar08.uky.edu//ehs/" local="131398832995440478" remote="131398749000000000" Dst="2" />
+<file name="common_version_list.php" server="ar08.uky.edu//ehs/" local="131399414476815435" remote="131399270400000000" Dst="2" />
+<file name="config_common_entry.php" server="ar08.uky.edu//ehs/" local="131398832998839537" remote="131398749000000000" Dst="2" />
+<file name="config_common_entry_list.php" server="ar08.uky.edu//ehs/" local="131398833000614902" remote="131398749000000000" Dst="2" />
+<file name="config_common_entry_test.php" server="ar08.uky.edu//ehs/" local="131398833002089100" remote="131398749000000000" Dst="2" />
+<file name="index.php" server="ar08.uky.edu//ehs/" local="131401858306462765" remote="131401714200000000" Dst="2" />
+<file name="model_location.php" server="ar08.uky.edu//ehs/" local="131398833066984396" remote="131398749000000000" Dst="2" />
+<file name="observation_source_read.php" server="ar08.uky.edu//ehs/" local="131400200015896578" remote="131400055800000000" Dst="2" />
+<file name="observation_source_list.php" server="ar08.uky.edu//ehs/" local="131399760800733175" remote="131399616600000000" Dst="2" />
+<file name="observation_target_read.php" server="ar08.uky.edu//ehs/" local="131401339885896665" remote="131401195800000000" Dst="2" />
+<file name="observation_target_list.php" server="ar08.uky.edu//ehs/" local="131400328137555990" remote="131400183600000000" Dst="2" />
 </dwsync>
