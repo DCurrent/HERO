@@ -382,15 +382,30 @@
 
 									?>
 										<tr>
-											<td><?php echo $observation_count; ?>:</td>
+											<th><?php echo $observation_count; ?>:</th>
 											<td><?php echo $_observation_source_current->get_observation(); ?>
 												<br />
 												<div class="form-group">									
 													<div class="col-sm-10">
-														<label class="radio-inline"><input type="radio" name="status" value="0">Yes</label>
-														<label class="radio-inline"><input type="radio" name="status" value="1">No</label>   
+														<label class="radio-inline"><input type="radio" 
+															name	= "status_<?php echo $_observation_source_current->get_id(); ?>[]"
+															id		= "status_<?php echo $_observation_source_current->get_id(); ?>"
+															value	= "1"
+															<?php if($_observation_source_current->get_result()==1){ echo ' checked'; } ?>>Yes</label>
+														
+														<label class="radio-inline"><input type	= "radio" 
+															name	= "status_<?php echo $_observation_source_current->get_id(); ?>[]" 
+															id		= "status_<?php echo $_observation_source_current->get_id(); ?>"
+															value	= "0"
+															<?php if(!$_observation_source_current->get_result()){ echo ' checked'; } ?>>No</label>   
 													</div>
 												</div>
+												<!-- Result table item field is populated with ID from source table
+													 is so we know which observation the result is refering to. -->
+												<input type	= "hidden" 
+													name	= "item[]" 
+													id		= "item_<?php echo $_observation_source_current->get_id(); ?>" 
+													value	= "<?php echo $_observation_source_current->get_id(); ?>"> 
 											</td>
 										</tr>                                    
 								<?php
