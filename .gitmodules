@@ -4,3 +4,6 @@
 [submodule "source/dc/chronofix"]
 	path = source/dc/chronofix
 	url = https://github.com/dcurrent/chronofix
+[submodule "source/dc/nahoni"]
+	path = source/dc/nahoni
+	url = https://github.com/dcurrent/nahoni
