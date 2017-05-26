@@ -64,7 +64,12 @@
 		// post variables.
 		$_main_data = new \data\Area();						
 		$_main_data->populate_from_request();
-			
+		
+		$_sub_results_data = new \data\ObservationSource();						
+		$_sub_results_data->populate_from_request();
+		
+		echo $_sub_results_data->xml().'<br />';
+		
 		// Call update stored procedure.
 		$query->set_sql('{call stf_observation_target_update(@param_id			= ?,
 												@param_log_update_by	= ?, 
@@ -72,7 +77,8 @@
 												@param_label 			= ?,
 												@param_details 			= ?,
 												@param_building_code	= ?,
-												@param_room_code		= ?)}');
+												@param_room_code		= ?,
+												@param_observation_results	= ?)}');
 												
 		$params = array(array('<root><row id="'.$_main_data->get_id().'"/></root>', 		SQLSRV_PARAM_IN),
 					array($access_obj->get_id(), 				SQLSRV_PARAM_IN),
@@ -80,9 +86,22 @@
 					array($_main_data->get_label(), 		SQLSRV_PARAM_IN),						
 					array($_main_data->get_details(),		SQLSRV_PARAM_IN),
 					array($_main_data->get_building_code(),	SQLSRV_PARAM_IN),
-					array($_main_data->get_room_code(),		SQLSRV_PARAM_IN));
+					array($_main_data->get_room_code(),		SQLSRV_PARAM_IN),
+					array($_sub_results_data->xml(),		SQLSRV_PARAM_IN));
 		
-		//var_dump($params);
+		//var_dump($_REQUEST);
+		
+		//$res_i = 0;
+		
+		//while(isset($_REQUEST['result_'.$res_i]))
+		//{
+			//echo '<br />'.$_REQUEST['result_'.$res_i];
+		//	$result_array[$res_i] = $_REQUEST['result_'.$res_i];
+		//	$res_i++;
+		//}
+		
+		//var_dump($result_array);
+		
 		//exit;
 		
 		$query->set_params($params);			
@@ -123,17 +142,17 @@
 			
 		case \dc\recordnav\COMMANDS::LISTING:
 							
-			action_list($_layout);
+			action_list();
 			break;
 			
 		case \dc\recordnav\COMMANDS::DELETE:						
 			
-			action_delete($_layout);	
+			action_delete();	
 			break;				
 					
 		case \dc\recordnav\COMMANDS::SAVE:
 			
-			action_save($_layout);			
+			action_save();			
 			break;			
 	}
 	
@@ -370,10 +389,7 @@
 										
 									// Generate table row for each item in list.
 									for($_list_observation_source->rewind(); $_list_observation_source->valid(); $_list_observation_source->next())
-									{	
-										// Increment counter.
-										$observation_count++;
-											
+									{											
 										$_observation_source_current = $_list_observation_source->current();
 
 										// Blank IDs will cause a database error, so make sure there is a
@@ -382,20 +398,20 @@
 
 									?>
 										<tr>
-											<th><?php echo $observation_count; ?>:</th>
+											<th><?php echo $observation_count+1; ?>:</th>
 											<td><?php echo $_observation_source_current->get_observation(); ?>
 												<br />
 												<div class="form-group">									
 													<div class="col-sm-10">
 														<label class="radio-inline"><input type="radio" 
-															name	= "status_<?php echo $_observation_source_current->get_id(); ?>[]"
-															id		= "status_<?php echo $_observation_source_current->get_id(); ?>"
+															name	= "result_<?php echo $_observation_source_current->get_id(); ?>"
+															id		= "result_<?php echo $_observation_source_current->get_id(); ?>"
 															value	= "1"
 															<?php if($_observation_source_current->get_result()==1){ echo ' checked'; } ?>>Yes</label>
 														
 														<label class="radio-inline"><input type	= "radio" 
-															name	= "status_<?php echo $_observation_source_current->get_id(); ?>[]" 
-															id		= "status_<?php echo $_observation_source_current->get_id(); ?>"
+															name	= "result_<?php echo $_observation_source_current->get_id(); ?>" 
+															id		= "result_<?php echo $_observation_source_current->get_id(); ?>"
 															value	= "0"
 															<?php if(!$_observation_source_current->get_result()){ echo ' checked'; } ?>>No</label>   
 													</div>
@@ -403,12 +419,14 @@
 												<!-- Result table item field is populated with ID from source table
 													 is so we know which observation the result is refering to. -->
 												<input type	= "hidden" 
-													name	= "item[]" 
+													name	= "item[]"
 													id		= "item_<?php echo $_observation_source_current->get_id(); ?>" 
-													value	= "<?php echo $_observation_source_current->get_id(); ?>"> 
+													value	= "<?php echo $_observation_source_current->get_id(); ?>">
 											</td>
 										</tr>                                    
 								<?php
+										// Increment counter.
+										$observation_count++;
 									}
 								}
 								?>                        

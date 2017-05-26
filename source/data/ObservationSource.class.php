@@ -5,12 +5,14 @@
 	interface iObservationSource
 	{
 		// Accessors.
+		function get_item();
 		function get_observation();
 		function get_solution();
 		function get_status();
 		function get_result();
 				
 		// Mutators.
+		function set_item($value);
 		function set_observation($value);
 		function set_solution($value);
 		function set_status($value);
@@ -20,11 +22,35 @@
 	class ObservationSource extends Common implements iObservationSource
 	{
 		protected
+			$item			= NULL,
 			$observation 	= NULL,
 			$result			= NULL,
 			$solution		= NULL,
 			$status			= NULL;
+		
+		public function xml()
+		{
+			$i 		= 0;
+			$result = NULL;
 			
+			if(is_array($this->item))
+			{				
+				$result = '<root>';
+							
+				foreach($this->item as $key => $item)
+				{							
+					$result .= '<row item="'.$item.'">';				
+					$result .= '<result>'.$_REQUEST['result_'.$item].'</result>';					
+					
+					$result .= '</row>';									
+				}
+				
+				$result .= '</root>';
+			}
+			
+			return $result;
+		}
+		
 		public function get_observation()
 		{
 			return $this->observation;
