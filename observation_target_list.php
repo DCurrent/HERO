@@ -164,8 +164,8 @@
         <div id="container" class="container">            
             <?php echo $navigation_obj->generate_markup_nav(); ?>                                                                                
             <div class="page-header">
-                <h1><?php echo LOCAL_BASE_TITLE; ?> List</h1>
-                <p class="lead">This form allows you to view an <?php echo strtolower(LOCAL_BASE_TITLE);?> list. Click any row to view details.</p>
+                <h1><?php echo LOCAL_BASE_TITLE; ?></h1>
+                <p class="lead">This form allows you to view an <?php echo strtolower(LOCAL_BASE_TITLE);?>. Click any row to view details.</p>
             </div>
             
             <?php
