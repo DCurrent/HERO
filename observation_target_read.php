@@ -277,7 +277,8 @@
                 <?php echo $obj_navigation_rec->get_markup_cmd_save_block(); ?>
                 <hr />
                 
-                <?php require(__DIR__.'/source/common_includes/details_field.php'); ?>
+                <!-- Moved to bottom for customer use -->
+                <?php // require(__DIR__.'/source/common_includes/details_field.php'); ?>
                 
                 <!--
              	<div class="form-group">       
@@ -435,6 +436,17 @@
 					</fieldset>
 				</div><!--/fg_observations-->
                
+               	<div class="form-group">  
+                    <label class="control-label col-sm-2" for="details">Notes</label>                    
+                    <div class="col-sm-10">
+                       	<span class=".small">If you have any other notes or observations you would like to include, feel free to add them here.</span>
+                       	<br />
+                       	&nbsp;
+                        <textarea class="form-control wysiwyg" rows="5" name="details" id="details"><?php echo $_main_data->get_details(); ?></textarea>
+                    </div>
+                </div> 
+               
+                
                  
                 <hr />
                 <div class="form-group">
