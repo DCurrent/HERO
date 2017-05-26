@@ -216,8 +216,7 @@
         <title><?php echo APPLICATION_SETTINGS::NAME. ', '.LOCAL_BASE_TITLE; ?></title>        
         
         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-        <link rel="stylesheet" href="source/css/style.css" />
-        <link rel="stylesheet" href="source/css/print.css" media="print" />
+        
         
         <style>
 						
@@ -411,12 +410,40 @@
 															<?php if($_observation_source_current->get_result()==1){ echo ' checked'; } ?>>Yes</label>
 														
 														<label class="radio-inline"><input type	= "radio" 
+															data-target	="#send"
+															data-toggle="radio-collapse"
 															name	= "result_<?php echo $_observation_source_current->get_id(); ?>" 
 															id		= "result_<?php echo $_observation_source_current->get_id(); ?>"
 															value	= "0"
 															<?php if(!$_observation_source_current->get_result()){ echo ' checked'; } ?>>No</label>   
 													</div>
 												</div>
+												
+													<div class="form-group">								
+														<div class="col-sm-10 collapse <?php if($_observation_source_current->get_result()==0) echo 'in' ?> result_solution_<?php echo $_observation_source_current->get_id(); ?>"  id="send">
+															<?php echo $_observation_source_current->get_solution(); ?>
+														</div>
+													</div>
+													
+													<script>
+														$('result_' + <?php echo $_observation_source_current->get_id(); ?>').on('change', function() {
+															if($('result_' + <?php echo $_observation_source_current->get_id(); ?>').is(':checked')) {
+															  $('.result_solution_' + <?php echo $_observation_source_current->get_id(); ?>').collapse('show');
+															} else {
+															  $('.result_solution_' + <?php echo $_observation_source_current->get_id(); ?>').collapse('hide');
+															}
+														  });
+													</script>
+													
+												<?php
+													// If the answer is 'no', offer a solution here.
+													if($_observation_source_current->get_result()==0)
+													{
+												?>
+												<?php
+													}
+												?>
+												
 												<!-- Result table item field is populated with ID from source table
 													 is so we know which observation the result is refering to. -->
 												<input type	= "hidden" 
@@ -463,6 +490,19 @@
 		<script>
             // Google Analytics Here// 
         
+			$('input[type=radio][data-toggle=radio-collapse]').each(function(index, item) {
+				  var $item = $(item);
+				  var $target = $($item.data('target'));
+
+				  $('input[type=radio][name="' + item.name + '"]').on('change', function() {
+					if($item.is(':checked')) {
+					  $target.collapse('show');
+					} else {
+					  $target.collapse('hide');
+					}
+				  });
+				});
+			
             $(document).ready(function(){
             });
        
