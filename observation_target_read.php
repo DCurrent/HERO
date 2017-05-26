@@ -420,7 +420,7 @@
 												</div>
 												
 													<div class="form-group">								
-														<div class="col-sm-10 collapse <?php if($_observation_source_current->get_result()==0) echo 'in' ?> result_solution_<?php echo $_observation_source_current->get_id(); ?>"  id="send">
+														<div class="col-sm-10 alert-success collapse <?php if($_observation_source_current->get_result()==0) echo 'in' ?> result_solution_<?php echo $_observation_source_current->get_id(); ?>"  id="send">
 															<?php echo $_observation_source_current->get_solution(); ?>
 														</div>
 													</div>
