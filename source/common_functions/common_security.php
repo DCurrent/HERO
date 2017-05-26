@@ -23,6 +23,8 @@
 		
 		$access_obj->verify();	
 		$access_obj->action();
+		
+		return $access_obj->get_account();
 	}
 
 ?>

@@ -76,7 +76,7 @@
 	} 
 	
 	// Verify user access.
-	common_security();
+	$current_account = common_security();
 	
 	// Start page cache.
 	$page_obj = new \dc\cache\PageCache();
@@ -165,8 +165,14 @@
             <?php echo $navigation_obj->generate_markup_nav(); ?>                                                                                
             <div class="page-header">
                 <h1><?php echo LOCAL_BASE_TITLE; ?> List</h1>
-                <p class="lead">This form allows you to view the complete <?php echo strtolower(LOCAL_BASE_TITLE);?> list. Click any row to view details.</p>
+                <p class="lead">This form allows you to view an <?php echo strtolower(LOCAL_BASE_TITLE);?> list. Click any row to view details.</p>
             </div>
+            
+            <?php
+            // Just a hack until database access list is ready.
+			if($current_account=='dvcask2' || $current_account=='lpoore0')
+			{
+			?>
             
             	<div class="panel panel-default" id="filter_container">
                     <div class="panel-heading" id="filter_header">
@@ -223,7 +229,10 @@
                         </div><!--#filter_body-->
                     </div><!--#filter_collapse-->
                 </div><!--#filter_container-->
-            
+            <?php
+			}
+			?>
+           
             <?php
 				// Clickable rows. Clicking on table rows
 				// should take user to a detail page for the
@@ -269,7 +278,7 @@
 						});
 					</script>
                     
-                    <a href="<?php echo $target_url; ?>&#63;nav_command=<?php echo \dc\recordnav\COMMANDS::NEW_BLANK;?>&amp;id=<?php echo \dc\yukon\DEFAULTS::NEW_ID; ?>" class="btn btn-success btn-block" title="Click here to start entering a new item."><span class="glyphicon glyphicon-plus"></span> <?php echo LOCAL_BASE_TITLE; ?></a>
+                    <a href="<?php echo $target_url; ?>&#63;nav_command=<?php echo \dc\recordnav\COMMANDS::NEW_BLANK;?>&amp;id=<?php echo \dc\yukon\DEFAULTS::NEW_ID; ?>" class="btn btn-success btn-block" title="Click here to start entering a new item."><span class="glyphicon glyphicon-plus"></span> New Observation</a>
                 <?php
 				}
 				
