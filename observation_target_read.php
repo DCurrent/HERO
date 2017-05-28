@@ -395,54 +395,60 @@
 										// Blank IDs will cause a database error, so make sure there is a
 										// usable one here.
 										if(!$_observation_source_current->get_id_key()) $_observation_source_current->set_id(\dc\yukon\DEFAULTS::NEW_ID);
+										
+										// Just to shorten the ID references below.
+										$_id = $_observation_source_current->get_id();
 
 									?>
 										<tr>
 											<th><?php echo $observation_count+1; ?>:</th>
 											<td><?php echo $_observation_source_current->get_observation(); ?>
 												<br />
+												<!-- Observation toggles. Current value: <?php echo $_observation_source_current->get_result(); ?>-->
 												<div class="form-group">									
 													<div class="col-sm-10">
 														<label class="radio-inline"><input type="radio" 
-															name	= "result_<?php echo $_observation_source_current->get_id(); ?>"
-															id		= "result_<?php echo $_observation_source_current->get_id(); ?>"
+															class	= "result_<?php echo $_id; ?>"
+															name	= "result_<?php echo $_id; ?>"
+															id		= "result_<?php echo $_id; ?>_1"
 															value	= "1"
-															<?php if($_observation_source_current->get_result()==1){ echo ' checked'; } ?>>Yes</label>
+															required
+															<?php if($_observation_source_current->get_result()===1){ echo ' checked'; } ?>>Yes</label>
 														
 														<label class="radio-inline"><input type	= "radio" 
-															data-target	="#send"
-															data-toggle="radio-collapse"
-															name	= "result_<?php echo $_observation_source_current->get_id(); ?>" 
-															id		= "result_<?php echo $_observation_source_current->get_id(); ?>"
+															class	= "result_<?php echo $_id; ?>"
+															name	= "result_<?php echo $_id; ?>" 
+															id		= "result_<?php echo $_id; ?>_0"
 															value	= "0"
-															<?php if(!$_observation_source_current->get_result()){ echo ' checked'; } ?>>No</label>   
+															required
+															<?php if($_observation_source_current->get_result()===0){ echo ' checked'; } ?>>No</label>   
 													</div>
 												</div>
 												
-													<div class="form-group">								
-														<div class="col-sm-10 alert-success collapse <?php if($_observation_source_current->get_result()==0) echo 'in' ?> result_solution_<?php echo $_observation_source_current->get_id(); ?>"  id="send">
+													<div class="form-group">				
+														<!-- Collapsed by default, with a jquery toggle below
+														that will display if the user activly selects 'no'. 
+														PHP will insert 'in' value to the 'collpase' class to have
+														the item displayed on page load if the checked value
+														is already 'no'. -->
+														<div class="col-sm-10 alert-success collapse <?php if($_observation_source_current->get_result()===0) echo 'in' ?> result_solution_<?php echo $_id; ?>">
 															<?php echo $_observation_source_current->get_solution(); ?>
 														</div>
 													</div>
 													
 													<script>
-														$('result_' + <?php echo $_observation_source_current->get_id(); ?>').on('change', function() {
-															if($('result_' + <?php echo $_observation_source_current->get_id(); ?>').is(':checked')) {
-															  $('.result_solution_' + <?php echo $_observation_source_current->get_id(); ?>').collapse('show');
+														// Fire whenever a result check value is modified.
+														$('.result_<?php echo $_id; ?>').on('change', function() {
+														  													  
+														  	// If 0 (no) is checked, then display the solution field.
+														  	// Otherwise, collapse it. 
+															if($('#result_<?php echo $_id; ?>_0').is(':checked')) {
+															  $('.result_solution_<?php echo $_id; ?>').collapse('show');
 															} else {
-															  $('.result_solution_' + <?php echo $_observation_source_current->get_id(); ?>').collapse('hide');
+															  $('.result_solution_<?php echo $_id; ?>').collapse('hide');
 															}
 														  });
 													</script>
-													
-												<?php
-													// If the answer is 'no', offer a solution here.
-													if($_observation_source_current->get_result()==0)
-													{
-												?>
-												<?php
-													}
-												?>
 												
 												<!-- Result table item field is populated with ID from source table
 													 is so we know which observation the result is refering to. -->
