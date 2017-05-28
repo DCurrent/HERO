@@ -30,17 +30,30 @@
 		
 		public function xml()
 		{
-			$i 		= 0;
-			$result = NULL;
+			$result 			= NULL;			
+			$observation_result = NULL;
 			
 			if(is_array($this->item))
 			{				
 				$result = '<root>';
 							
 				foreach($this->item as $key => $item)
-				{							
+				{
+					$observation_result = NULL;
+					
+					// HTML radio buttons cannot be part of the 
+					// same array like other inputs since the name is what
+					// locks a group of radio buttons together. 
+					// That means we have to identify each set of radio
+					// buttons as a unique request and break them down
+					// here.
+					if(isset($_REQUEST['result_'.$item]))
+					{
+						$observation_result = $_REQUEST['result_'.$item];
+					}
+					
 					$result .= '<row item="'.$item.'">';				
-					$result .= '<result>'.$_REQUEST['result_'.$item].'</result>';					
+					$result .= '<result>'.$observation_result.'</result>';					
 					
 					$result .= '</row>';									
 				}
