@@ -260,6 +260,8 @@
         <!-- WYSIWYG Text boxes -->
 		<script type="text/javascript" src="source/javascript/tinymce/tinymce.min.js"></script>
         <script type="text/javascript" src="source/javascript/tinymce/settings.js"></script>
+    	
+  		<script>tinymce.init({ selector:'textarea' });</script>
     </head>
     
     <body>    
