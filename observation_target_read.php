@@ -269,7 +269,7 @@
             <?php echo $obj_navigation_main->generate_markup_nav(); ?>                                                                                
             <div class="page-header">           
                 <h1><?php echo LOCAL_BASE_TITLE; ?></h1>
-                <p class="lead">This screen allows you to add or edit an observation for any slip, trip, or fall hazards. Follow the instructions below to enter an observation set.</p>
+                <p class="lead">This screen allows you to add or edit an observation for any slip, trip, or fall hazards. Enter an observation set using the form below.</p>
                 <?php require(__DIR__.'/source/common_includes/revision_alert.php'); ?>
             </div>
             
@@ -310,11 +310,15 @@
                 
                                 
                 <div class="form-group">  
-                    <label class="control-label col-sm-2" for="label">Label</label>                    
+                    <label class="control-label col-sm-2" for="label">Label <a href="#help_label" data-toggle="collapse" class="glyphicon glyphicon-question-sign"></a></label>                   
                     <div class="col-sm-10">
-                       	<span class=".small">A label is just for your own use in case you'd like to have an easy reference to this observation set. It is not required.</span>
-                       	<br />
-                       	&nbsp;
+                       	
+                       	<div id="help_label" class="collapse text-info">
+							A label is just for your own use in case you'd like to have an easy reference to this observation set. It is not required. <a href="#help_label" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>	
+							<br />
+							&nbsp;
+						</div> 
+                       
                         <input 
                             type	="text" 
                             class	="form-control"  
@@ -326,11 +330,17 @@
                 </div> 
                 
                 <div class="form-group">
-					<label class="control-label col-sm-2" for="building_code">Building</label>					
+					
+					<label class="control-label col-sm-2" for="building_code">Building <a href="#help_building" data-toggle="collapse" class="glyphicon glyphicon-question-sign"></a></label>					
+					
 					<div class="col-sm-10">
-						<span class=".small">A building is required. If the observation is outside, then select the nearest building instead. Buildings are arranged in alphabetical order. If you know the building's number, you can type it while the list is open to more quickly locate the item you are looking for.</span>
-						<br />
-						&nbsp;
+						
+						<div id="help_building" class="collapse text-info">
+							A building is required. If the observation is outside, then select the nearest building instead. Buildings are arranged in alphabetical order. If you know the building's number, you can type it while the list is open to more quickly locate the item you are looking for. <a href="#help_building" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>
+							<br />
+							&nbsp;	
+						</div> 
+						
 						<select name="building_code" 
 							id="building_code" 
 							data-current="<?php echo $_main_data->get_building_code(); ?>" 
@@ -346,11 +356,15 @@
 				</div> 
                     
 				<div class="form-group">
-					<label class="control-label col-sm-2" for="room_code">Area</label>
+					<label class="control-label col-sm-2" for="room_code">Area <a href="#help_area" data-toggle="collapse" class="glyphicon glyphicon-question-sign"></a></label>
 					<div class="col-sm-10">
-						<span class=".small">The area is your room, laboratory, or whatever space you make an observation in. All areas in a UK Facility are given their own room identity - even places like closets, hallways, and common spaces. The rooms here are arranged by floor, and then room number. Choices are also included for areas outside of a building.</span>
-						<br />
-						&nbsp;
+						
+						<div id="help_area" class="collapse text-info">
+							The area is your room, laboratory, or whatever space you make an observation in. All areas in a UK Facility are given their own room identity - even places like closets, hallways, and common spaces. The rooms here are arranged by floor, and then room number. Choices are also included for areas outside of a building. <a href="#help_area" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>	
+							<br />
+							&nbsp;
+						</div>
+						
 						<select name="room_code" 
 							id="room_code" 
 							data-facility="<?php echo $_main_data->get_building_code(); ?>"
@@ -369,105 +383,113 @@
                
                	
                	<div class="form-group" id="fg_observations">       
-				  <div class="col-sm-2">
-				  </div>                
-				  <fieldset class="col-sm-10">
-						<legend>Observations</legend>
+				  	<!--div class="col-sm-2">
+				  	</div-->                
+					<fieldset class="col-sm-12">
+						<legend>Observations <a href="#help_observation" data-toggle="collapse" class="glyphicon glyphicon-question-sign"></a></legend>
 						
-						<span class=".small">These are the observations we would like you to consider. Read each item carefully, and then choose the appropriate response. When you are finished, press the Save key to record your answers. You will then be given suggestions for taking any necessary corrective actions.</span>
-						<br />
-						&nbsp;
-						<table class="table table-striped table-hover table-condensed" id="tbl_sub_visit"> 
-							<thead>								
-							</thead>
-							<tfoot>
-							</tfoot>
-							<tbody id="tbody_observations" class="observation">                        
-								<?php                              
-								if(is_object($_list_observation_source) === TRUE)
-								{    
-									// Start a counter.
-									$observation_count = 0;
-										
-									// Generate table row for each item in list.
-									for($_list_observation_source->rewind(); $_list_observation_source->valid(); $_list_observation_source->next())
-									{											
-										$_observation_source_current = $_list_observation_source->current();
+						<div id="help_observation" class="collapse text-info">
+							These are the observations we would like you to consider. Read each item carefully, and then choose the appropriate response. When you are finished, press the Save key to record your answers. You will then be given suggestions for taking any necessary corrective actions. <a href="#help_observation" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a> 	
+							<br />
+							&nbsp;
+						</div>
+						
+						<div class="col-sm-2"></div>
+						<div class="col-sm-10">
+							
+							
+							<table class="table table-striped table-hover table-condensed" id="tbl_sub_visit"> 
+								<thead>								
+								</thead>
+								<tfoot>
+								</tfoot>
+								<tbody id="tbody_observations" class="observation">                        
+									<?php                              
+									if(is_object($_list_observation_source) === TRUE)
+									{    
+										// Start a counter.
+										$observation_count = 0;
 
-										// Blank IDs will cause a database error, so make sure there is a
-										// usable one here.
-										if(!$_observation_source_current->get_id_key()) $_observation_source_current->set_id(\dc\yukon\DEFAULTS::NEW_ID);
-										
-										// Just to shorten the ID references below.
-										$_id = $_observation_source_current->get_id();
+										// Generate table row for each item in list.
+										for($_list_observation_source->rewind(); $_list_observation_source->valid(); $_list_observation_source->next())
+										{											
+											$_observation_source_current = $_list_observation_source->current();
 
-									?>
-										<tr>
-											<th><?php echo $observation_count+1; ?>:</th>
-											<td><?php echo $_observation_source_current->get_observation(); ?>
-												<br />
-												<!-- Observation toggles. Current value: <?php echo $_observation_source_current->get_result(); ?>-->
-												<div class="form-group">									
-													<div class="col-sm-10">
-														<label class="radio-inline"><input type="radio" 
-															class	= "result_<?php echo $_id; ?>"
-															name	= "result_<?php echo $_id; ?>"
-															id		= "result_<?php echo $_id; ?>_1"
-															value	= "1"
-															required
-															<?php if($_observation_source_current->get_result()===1){ echo ' checked'; } ?>>Yes</label>
-														
-														<label class="radio-inline"><input type	= "radio" 
-															class	= "result_<?php echo $_id; ?>"
-															name	= "result_<?php echo $_id; ?>" 
-															id		= "result_<?php echo $_id; ?>_0"
-															value	= "0"
-															required
-															<?php if($_observation_source_current->get_result()===0){ echo ' checked'; } ?>>No</label>   
-													</div>
-												</div>
-												
-													<div class="form-group">				
-														<!-- Collapsed by default, with a jquery toggle below
-														that will display if the user activly selects 'no'. 
-														PHP will insert 'in' value to the 'collpase' class to have
-														the item displayed on page load if the checked value
-														is already 'no'. -->
-														<div class="col-sm-10 alert-success collapse <?php if($_observation_source_current->get_result()===0) echo 'in' ?> result_solution_<?php echo $_id; ?>">
-															<?php echo $_observation_source_current->get_solution(); ?>
+											// Blank IDs will cause a database error, so make sure there is a
+											// usable one here.
+											if(!$_observation_source_current->get_id_key()) $_observation_source_current->set_id(\dc\yukon\DEFAULTS::NEW_ID);
+
+											// Just to shorten the ID references below.
+											$_id = $_observation_source_current->get_id();
+
+										?>
+											<tr>
+												<th><?php echo $observation_count+1; ?>:</th>
+												<td><?php echo $_observation_source_current->get_observation(); ?>
+													<br />
+													<!-- Observation toggles. Current value: <?php echo $_observation_source_current->get_result(); ?>-->
+													<div class="form-group">									
+														<div class="col-sm-10">
+															<label class="radio-inline"><input type="radio" 
+																class	= "result_<?php echo $_id; ?>"
+																name	= "result_<?php echo $_id; ?>"
+																id		= "result_<?php echo $_id; ?>_1"
+																value	= "1"
+																required
+																<?php if($_observation_source_current->get_result()===1){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-up text-success" style="font-size:large;"></span></label>
+
+															<label class="radio-inline"><input type	= "radio" 
+																class	= "result_<?php echo $_id; ?>"
+																name	= "result_<?php echo $_id; ?>" 
+																id		= "result_<?php echo $_id; ?>_0"
+																value	= "0"
+																required
+																<?php if($_observation_source_current->get_result()===0){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-down text-danger" style="font-size:large;"></span></label>   
 														</div>
 													</div>
-													
-													<script>
-														// Fire whenever a result check value is modified.
-														$('.result_<?php echo $_id; ?>').on('change', function() {
-														  													  
-														  	// If 0 (no) is checked, then display the solution field.
-														  	// Otherwise, collapse it. 
-															if($('#result_<?php echo $_id; ?>_0').is(':checked')) {
-															  $('.result_solution_<?php echo $_id; ?>').collapse('show');
-															} else {
-															  $('.result_solution_<?php echo $_id; ?>').collapse('hide');
-															}
-														  });
-													</script>
-												
-												<!-- Result table item field is populated with ID from source table
-													 is so we know which observation the result is refering to. -->
-												<input type	= "hidden" 
-													name	= "item[]"
-													id		= "item_<?php echo $_observation_source_current->get_id(); ?>" 
-													value	= "<?php echo $_observation_source_current->get_id(); ?>">
-											</td>
-										</tr>                                    
-								<?php
-										// Increment counter.
-										$observation_count++;
+
+														<div class="form-group">				
+															<!-- Collapsed by default, with a jquery toggle below
+															that will display if the user activly selects 'no'. 
+															PHP will insert 'in' value to the 'collpase' class to have
+															the item displayed on page load if the checked value
+															is already 'no'. -->
+															<div class="col-sm-10 alert-info collapse <?php if($_observation_source_current->get_result()===0) echo 'in' ?> result_solution_<?php echo $_id; ?>">
+																<?php echo $_observation_source_current->get_solution(); ?>
+															</div>
+														</div>
+
+														<script>
+															// Fire whenever a result check value is modified.
+															$('.result_<?php echo $_id; ?>').on('change', function() {
+
+																// If 0 (no) is checked, then display the solution field.
+																// Otherwise, collapse it. 
+																if($('#result_<?php echo $_id; ?>_0').is(':checked')) {
+																  $('.result_solution_<?php echo $_id; ?>').collapse('show');
+																} else {
+																  $('.result_solution_<?php echo $_id; ?>').collapse('hide');
+																}
+															  });
+														</script>
+
+													<!-- Result table item field is populated with ID from source table
+														 is so we know which observation the result is refering to. -->
+													<input type	= "hidden" 
+														name	= "item[]"
+														id		= "item_<?php echo $_observation_source_current->get_id(); ?>" 
+														value	= "<?php echo $_observation_source_current->get_id(); ?>">
+												</td>
+											</tr>                                    
+									<?php
+											// Increment counter.
+											$observation_count++;
+										}
 									}
-								}
-								?>                        
-							</tbody>                        
-						</table> 
+									?>                        
+								</tbody>                        
+							</table> 
+						</div>
 					</fieldset>
 				</div><!--/fg_observations-->
                
