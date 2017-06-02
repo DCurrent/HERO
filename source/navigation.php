@@ -143,7 +143,7 @@
                     <li>
                     	<ul class="list-unstyled text-muted small" style="margin-bottom:10px;">
                         	<li><?php echo APPLICATION_SETTINGS::NAME; ?> Ver <?php echo APPLICATION_SETTINGS::VERSION; ?>, Engine <?php echo PHP_VERSION; ?></li>   
-                        	<li>Developed by: <a href="mailto:dvcask2@uky.edu"><span class="glyphicon glyphicon-envelope"></span> Caskey, Damon V.</a></li>
+                        	<li>Developed by: <a href="https://github.com/dcurrent">Caskey, Damon V.</a></li>
                             <li>Copyright &copy; <?php echo date("Y"); ?>, University of Kentucky</li>
                             <li>Last update: 
                                 <?php 
