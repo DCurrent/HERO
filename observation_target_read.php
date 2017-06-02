@@ -336,7 +336,7 @@
 					<div class="col-sm-10">
 						
 						<div id="help_building" class="collapse text-info">
-							A building is required. If the observation is outside, then select the nearest building instead. Buildings are arranged in alphabetical order. If you know the building's number, you can type it while the list is open to more quickly locate the item you are looking for. <a href="#help_building" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>
+							A building is required. If the observation is outside, then select the nearest building instead. Buildings are arranged in alphabetical order. If you know the building's number (speed sort), you can type it while the list is open to more quickly locate the item you are looking for. <a href="#help_building" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>
 							<br />
 							&nbsp;	
 						</div> 
@@ -447,17 +447,17 @@
 																<?php if($_observation_source_current->get_result()===0){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-down text-danger" style="font-size:large;"></span></label>   
 														</div>
 													</div>
-
-														<div class="form-group">				
+																		
 															<!-- Collapsed by default, with a jquery toggle below
 															that will display if the user activly selects 'no'. 
 															PHP will insert 'in' value to the 'collpase' class to have
 															the item displayed on page load if the checked value
 															is already 'no'. -->
-															<div class="col-sm-10 alert-info collapse <?php if($_observation_source_current->get_result()===0) echo 'in' ?> result_solution_<?php echo $_id; ?>">
-																<?php echo $_observation_source_current->get_solution(); ?>
+															<div class="text-info collapse <?php if($_observation_source_current->get_result()===0) echo 'in' ?> result_solution_<?php echo $_id; ?>">
+																	<h4>Suggestions:</h4>																	
+																	<?php echo $_observation_source_current->get_solution(); ?>
 															</div>
-														</div>
+														
 
 														<script>
 															// Fire whenever a result check value is modified.
@@ -532,9 +532,6 @@
 					}
 				  });
 				});
-			
-            $(document).ready(function(){
-            });
        
 			// Building & area entry
 			$(document).ready(function(event) {		
@@ -560,8 +557,10 @@
 			// Room search and add.
 			$('.room_search').change(function(event)
 			{
+				$('#room_code').val("0");
 				options_update(event, null, '#room_code');	
 			});
+	
 			
 		</script>
 	</body>
