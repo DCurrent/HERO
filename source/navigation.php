@@ -82,7 +82,10 @@
                            
                            	<?php
 								// Just a hack until database access list is ready.
-                           		if($this->access_obj->get_account()=='dvcask2' || $this->access_obj->get_account()=='lpoore0')
+                           		if($this->access_obj->get_account()=='dvcask2' 
+								   	|| $this->access_obj->get_account()=='lpoore0' 
+								   	|| $this->access_obj->get_account()=='mla263'
+								  	|| $this->access_obj->get_account()=='dwhibb0')
 								{
                            	?>
 								<li class="dropdown">
