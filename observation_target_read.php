@@ -551,13 +551,14 @@
 						<?php
 						}
 						?>
+				
+						$('#room_code').attr("data-current", null);
 
 					});
 
 			// Room search and add.
 			$('.room_search').change(function(event)
-			{
-				$('#room_code').val("0");
+			{				
 				options_update(event, null, '#room_code');	
 			});
 	

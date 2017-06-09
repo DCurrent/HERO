@@ -205,7 +205,7 @@
 							echo 'Good evening ';
 						}
 						echo $access_obj->get_name_f();
-				?>, thanks for participating! You can use the navigation menu above to start up a new observation or view any previous observations you have made.</p>
+				?>, thanks for participating! You can use the navigation menu above or <a href="observation_target_read.php?id=-1">click here</a> to start up a new observation.</p>
                 <?php
 					}
 					else
