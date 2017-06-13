@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="Account.class.php" server="ar08.uky.edu//ehs/" local="131401102832711201" remote="131400985800000000" Dst="2" />
-<file name="AccountGroup.class.php" server="ar08.uky.edu//ehs/" local="131401102832715870" remote="131400985800000000" Dst="2" />
-<file name="AccountRole.class.php" server="ar08.uky.edu//ehs/" local="131401102832745366" remote="131400985800000000" Dst="2" />
-<file name="AccountGroupMember.class.php" server="ar08.uky.edu//ehs/" local="131401102832730251" remote="131400985800000000" Dst="2" />
-<file name="Area.class.php" server="ar08.uky.edu//ehs/" local="131401102832765403" remote="131400985800000000" Dst="2" />
-<file name="AreaType.class.php" server="ar08.uky.edu//ehs/" local="131401102832775438" remote="131400985800000000" Dst="2" />
-<file name="Common.class.php" server="ar08.uky.edu//ehs/" local="131401102832951517" remote="131400985800000000" Dst="2" />
-<file name="Master.class.php" server="ar08.uky.edu//ehs/" local="131401102832961283" remote="131400985800000000" Dst="2" />
-<file name="ObservationSource.class.php" server="ar08.uky.edu//ehs/" local="131401339408350679" remote="131401195200000000" Dst="2" />
-<file name="ObservationTarget.class.php" server="ar08.uky.edu//ehs/" local="131401102832991671" remote="131400985800000000" Dst="2" />
+<file name="Account.class.php" server="ar08.uky.edu//ehs/" local="131402235165629617" remote="131402110800000000" Dst="2" />
+<file name="AccountGroup.class.php" server="ar08.uky.edu//ehs/" local="131402235165810097" remote="131402110800000000" Dst="2" />
+<file name="AccountRole.class.php" server="ar08.uky.edu//ehs/" local="131402235166271348" remote="131402110800000000" Dst="2" />
+<file name="AccountGroupMember.class.php" server="ar08.uky.edu//ehs/" local="131402235165990609" remote="131402110800000000" Dst="2" />
+<file name="Area.class.php" server="ar08.uky.edu//ehs/" local="131402235166762923" remote="131402110800000000" Dst="2" />
+<file name="Common.class.php" server="ar08.uky.edu//ehs/" local="131402235167233987" remote="131402110800000000" Dst="2" />
+<file name="Master.class.php" server="ar08.uky.edu//ehs/" local="131402235167695116" remote="131402110800000000" Dst="2" />
+<file name="ObservationSource.class.php" server="ar08.uky.edu//ehs/" local="131404440572413224" remote="131404296000000000" Dst="2" />
+<file name="ObservationTarget.class.php" server="ar08.uky.edu//ehs/" local="131402235168166646" remote="131402110800000000" Dst="2" />
+<file name="Account.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448862592763" remote="131418310800000000" Dst="2" />
+<file name="AccountGroup.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448862733144" remote="131418310800000000" Dst="2" />
+<file name="AccountGroupMember.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448862858461" remote="131418310800000000" Dst="2" />
+<file name="AccountRole.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448863049035" remote="131418310800000000" Dst="2" />
+<file name="Area.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448863394892" remote="131418310800000000" Dst="2" />
+<file name="Common.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448863580646" remote="131418310800000000" Dst="2" />
+<file name="Master.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448863886515" remote="131418310800000000" Dst="2" />
+<file name="ObservationSource.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448863901231" remote="131418310800000000" Dst="2" />
+<file name="ObservationTarget.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448863916306" remote="131418310800000000" Dst="2" />
 </dwsync>

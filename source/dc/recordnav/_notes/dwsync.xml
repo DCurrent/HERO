@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <dwsync>
-<file name="DataNavigation.class.php" server="ar08.uky.edu//ehs/" local="131401102836125651" remote="131400985800000000" Dst="2" />
-<file name="config.php" server="ar08.uky.edu//ehs/" local="131401102837833472" remote="131400985800000000" Dst="2" />
-<file name="Paging.class.php" server="ar08.uky.edu//ehs/" local="131401102836739621" remote="131400985800000000" Dst="2" />
-<file name="RecordNav.class.php" server="ar08.uky.edu//ehs/" local="131401102837716913" remote="131400985800000000" Dst="2" />
+<file name="DataNavigation.class.php" server="ar08.uky.edu//ehs/" local="131402235172648273" remote="131405201400000000" Dst="2" />
+<file name="config.php" server="ar08.uky.edu//ehs/" local="131402235174232508" remote="131405201400000000" Dst="2" />
+<file name="Paging.class.php" server="ar08.uky.edu//ehs/" local="131402235173210036" remote="131405201400000000" Dst="2" />
+<file name="RecordNav.class.php" server="ar08.uky.edu//ehs/" local="131402235174112456" remote="131405201400000000" Dst="2" />
+<file name="Paging.class.php" server="//ehsweb.ad.uky.edu/ehs/" local="131407331864249085" remote="131407331860000000" Dst="2" />
+<file name="Paging.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448868712849" remote="131418311400000000" Dst="2" />
+<file name="DataNavigation.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448868096182" remote="131418311400000000" Dst="2" />
+<file name="config.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448869865967" remote="131418311400000000" Dst="2" />
+<file name="RecordNav.class.php" server="arftp.ad.uky.edu//ehs/apps/portland/" local="131418448869725531" remote="131418311400000000" Dst="2" />
 </dwsync>
