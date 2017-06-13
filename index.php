@@ -180,7 +180,8 @@
             <?php echo $navigation_obj->get_markup_nav(); ?>                                                                                
             <div class="page-header">
                 <h1><?php echo APPLICATION_SETTINGS::NAME; ?></h1>
-                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, our observation system for tracking potential hazards like slip, trip, and fall conditions. For more information about slips and falls, please see the following video.</p>
+                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, our observation system for tracking potential hazards like slip, trip, and fall conditions.</p>
+                <p class="lead">
 				<?php
 				
 					echo '<!--account:'.$access_obj->get_account().'-->';
@@ -205,13 +206,18 @@
 							echo 'Good evening ';
 						}
 						echo $access_obj->get_name_f();
-				?>, thanks for participating! You can use the navigation menu above or <a href="observation_target_read.php?id=-1">click here</a> to start up a new observation.</p>
+				?>, thanks for participating! Please complete the following steps:</p>
+               		
+                	<p>1. Watch this video below for information about slips, trips, falls, and how to prevent them.</p>
+              		<p><iframe width="560" height="315" src="https://www.youtube.com/embed/Bckj4zErK-Q" frameborder="0" allowfullscreen></iframe></p>
+                	<p>2. Fill out <a href="<a href="observation_target_read.php?id=-1">the online observation form</a> and submit. Follow your area&rsquo;s   process for correcting issues whether that is communicating it to your   supervisor, submitting a work order, or correcting it yourself. EHS   will review and assist in correcting items that you might not know   exactly how to handle.</p>
+               
                 <?php
 					}
 					else
 					{
 				?>
-                		<p class="lead">In order to use <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
+       		  <p class="lead">In order to use <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
             		
                     	<p><?php echo $access_obj->dialog(); ?></p>
                     	
@@ -239,8 +245,8 @@
            		<br />
            		&nbsp;
            		<p class="center-block">
-           		<iframe width="560" height="315" src="https://www.youtube.com/embed/Bckj4zErK-Q" frameborder="0" allowfullscreen></iframe>
-            	</p>
+           		
+           	  </p>
             </div> 
                     
             <?php echo $navigation_obj->get_markup_footer(); ?>
