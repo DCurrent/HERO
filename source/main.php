@@ -1,6 +1,6 @@
 <?php
 	
-	require(__DIR__.'/settings.php');				// User defined settings.
+	require(__DIR__.'/config.php');				// User defined settings.
 	require(__DIR__.'/navigation.php');	
 	
 	// Load class using namespace.

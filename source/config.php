@@ -3,7 +3,7 @@
 	abstract class APPLICATION_SETTINGS
 	{
 		const
-			VERSION 		= '0.1.1',
+			VERSION 		= '0.1.2',
 			NAME			= 'Hero',
 			DIRECTORY_PRIME	= '/apps/hero',
 			TIME_FORMAT		= 'Y-m-d H:i:s',
