@@ -107,15 +107,215 @@
 		</style>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>     
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>        
-        
-        <!-- WYSIWYG Text boxes -->
-		<script type="text/javascript" src="source/javascript/tinymce/tinymce.min.js"></script>
-        <script type="text/javascript" src="source/javascript/tinymce/settings.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>		
     </head>
     
     <body>    
-       	<h1>Observation List - Under Construction</h1>
+        <div id="container" class="container">                                              
+            <div class="page-header">           
+                <h1><?php echo LOCAL_BASE_TITLE; ?></h1>
+                <p class="lead">This printable observation form is provided for your convenience. Completed observations must be submitted with the Hero Application.</p>
+            </div>
+            
+            <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">           
+                <hr />       
+                
+                <div class="form-group">					
+					<label class="control-label col-sm-2" for="building_code">Building <a href="#help_building" data-toggle="collapse" class="glyphicon glyphicon-question-sign"></a></label>					
+					
+					<div class="col-sm-10">
+						
+						<div id="help_building" class="collapse text-info">
+							A building is required. If the observation is outside, then select the nearest building instead. Buildings are arranged in alphabetical order. If you know the building's number (speed sort), you can type it while the list is open to more quickly locate the item you are looking for. <a href="#help_building" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>
+							<br />
+							&nbsp;	
+						</div> 
+					</div>
+				</div> 
+                    
+				<div class="form-group">
+					<label class="control-label col-sm-2" for="room_code">Area <a href="#help_area" data-toggle="collapse" class="glyphicon glyphicon-question-sign"></a></label>
+					<div class="col-sm-10">
+						
+						<div id="help_area" class="collapse text-info">
+							The area is your room, laboratory, or whatever space you make an observation in. All areas in a UK Facility are given their own room identity - even places like closets, hallways, and common spaces. The rooms here are arranged by floor, and then room number. Choices are also included for areas outside of a building. <a href="#help_area" data-toggle="collapse" class="glyphicon glyphicon-remove-sign text-danger"></a>	
+							<br />
+							&nbsp;
+						</div>
+						
+					</div>                                   
+				</div>    
+               
+               	
+               	<div class="form-group" id="fg_observations">       
+				  	<!--div class="col-sm-2">
+				  	</div-->                
+					<fieldset class="col-sm-12">
+						<legend>Observations</legend>
+						
+						<div class="col-sm-2"></div>
+						<div class="col-sm-10">
+							
+							
+							<table class="table table-striped table-hover table-condensed" id="tbl_sub_visit"> 
+								<thead>								
+								</thead>
+								<tfoot>
+								</tfoot>
+								<tbody id="tbody_observations" class="observation table-striped">                        
+									<?php                              
+									if(is_object($_list_observation_source) === TRUE)
+									{    
+										// Start a counter.
+										$observation_count = 0;
+
+										// Generate table row for each item in list.
+										for($_list_observation_source->rewind(); $_list_observation_source->valid(); $_list_observation_source->next())
+										{											
+											$_observation_source_current = $_list_observation_source->current();
+
+											// Blank IDs will cause a database error, so make sure there is a
+											// usable one here.
+											if(!$_observation_source_current->get_id_key()) $_observation_source_current->set_id(\dc\yukon\DEFAULTS::NEW_ID);
+
+											// Just to shorten the ID references below.
+											$_id = $_observation_source_current->get_id();
+
+										?>
+											<tr>
+												<th><?php echo $observation_count+1; ?>:</th>
+												<td><?php echo $_observation_source_current->get_observation(); ?>
+													<br />
+													<!-- Observation toggles. Current value: <?php echo $_observation_source_current->get_result(); ?>-->
+													<div class="form-group">									
+														<div class="col-sm-10">
+															<label class="radio-inline"><input type="radio" 
+																class	= "result_<?php echo $_id; ?>"
+																name	= "result_<?php echo $_id; ?>"
+																id		= "result_<?php echo $_id; ?>_1"
+																value	= "1"
+																required
+																<?php if($_observation_source_current->get_result()===1){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-up text-success" style="font-size:large;"></span></label>
+
+															<label class="radio-inline"><input type	= "radio" 
+																class	= "result_<?php echo $_id; ?>"
+																name	= "result_<?php echo $_id; ?>" 
+																id		= "result_<?php echo $_id; ?>_0"
+																value	= "0"
+																required
+																<?php if($_observation_source_current->get_result()===0){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-down text-danger" style="font-size:large;"></span></label>   
+														</div>
+													</div>
+																		
+															<!-- Collapsed by default, with a jquery toggle below
+															that will display if the user activly selects 'no'. 
+															PHP will insert 'in' value to the 'collpase' class to have
+															the item displayed on page load if the checked value
+															is already 'no'. -->
+															<div class="text-info collapse <?php if($_observation_source_current->get_result()===0) echo 'in' ?> result_solution_<?php echo $_id; ?>">
+																	<h4>Suggestions:</h4>																	
+																	<?php echo $_observation_source_current->get_solution(); ?>
+															</div>
+														
+
+														<script>
+															// Fire whenever a result check value is modified.
+															$('.result_<?php echo $_id; ?>').on('change', function() {
+
+																// If 0 (no) is checked, then display the solution field.
+																// Otherwise, collapse it. 
+																if($('#result_<?php echo $_id; ?>_0').is(':checked')) {
+																  $('.result_solution_<?php echo $_id; ?>').collapse('show');
+																} else {
+																  $('.result_solution_<?php echo $_id; ?>').collapse('hide');
+																}
+															  });
+														</script>
+
+													<!-- Result table item field is populated with ID from source table
+														 is so we know which observation the result is refering to. -->
+													<input type	= "hidden" 
+														name	= "item[]"
+														id		= "item_<?php echo $_observation_source_current->get_id(); ?>" 
+														value	= "<?php echo $_observation_source_current->get_id(); ?>">
+												</td>
+											</tr>                                    
+									<?php
+											// Increment counter.
+											$observation_count++;
+										}
+									}
+									?>                        
+								</tbody>                        
+							</table> 
+						</div>
+					</fieldset>
+				</div><!--/fg_observations-->
+               
+               	<div class="form-group">  
+                    <label class="control-label col-sm-2" for="details">Additional Observations</label>                    
+                    <div class="col-sm-10">
+                       	<span class=".small">If you have any other notes or observations you would like to include, feel free to add them here.</span>
+                       	<br />
+                       	&nbsp;
+                        <textarea class="form-control wysiwyg" rows="5" name="details" id="details"><?php echo $_main_data->get_details(); ?></textarea>
+                    </div>
+                </div> 
+               
+                
+                 
+                <hr />      
+            </form>
+        </div><!--container-->        
+		<script src="source/javascript/verify_save.js"></script>
+		<script src="../../libraries/javascript/options_update.js"></script>
+		<script>
+            // Google Analytics Here// 
+        
+			$('input[type=radio][data-toggle=radio-collapse]').each(function(index, item) {
+				  var $item = $(item);
+				  var $target = $($item.data('target'));
+
+				  $('input[type=radio][name="' + item.name + '"]').on('change', function() {
+					if($item.is(':checked')) {
+					  $target.collapse('show');
+					} else {
+					  $target.collapse('hide');
+					}
+				  });
+				});
+       
+			// Building & area entry
+			$(document).ready(function(event) {		
+
+						// Populate building seelct list.
+						options_update(event, null, '#building_code');
+						
+						// If the room and building fields are 
+						// populated, we need to populate the 
+						// room select list too so current room 
+						// selection is visible.
+						<?php
+						if($_main_data->get_building_code() && $_main_data->get_room_code())
+						{
+						?>
+							 options_update(event, null, '#room_code');
+						<?php
+						}
+						?>
+				
+						$('#room_code').attr("data-current", null);
+
+					});
+
+			// Room search and add.
+			$('.room_search').change(function(event)
+			{				
+				options_update(event, null, '#room_code');	
+			});
+	
+			
+		</script>
 	</body>
 </html>
 
