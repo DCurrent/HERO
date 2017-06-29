@@ -494,7 +494,7 @@
 				</div><!--/fg_observations-->
                
                	<div class="form-group">  
-                    <label class="control-label col-sm-2" for="details">Notes</label>                    
+                    <label class="control-label col-sm-2" for="details">Additional Observations</label>                    
                     <div class="col-sm-10">
                        	<span class=".small">If you have any other notes or observations you would like to include, feel free to add them here.</span>
                        	<br />
