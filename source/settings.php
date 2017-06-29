@@ -4,8 +4,8 @@
 	{
 		const
 			VERSION 		= '0.1.1',
-			NAME			= 'Portland',
-			DIRECTORY_PRIME	= '/apps/portland',
+			NAME			= 'Hero',
+			DIRECTORY_PRIME	= '/apps/hero',
 			TIME_FORMAT		= 'Y-m-d H:i:s',
 			PAGE_ROW_MAX	= 25;
 	}
