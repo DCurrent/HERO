@@ -180,7 +180,7 @@
             <?php echo $navigation_obj->get_markup_nav(); ?>                                                                                
             <div class="page-header">
                 <h1><?php echo APPLICATION_SETTINGS::NAME; ?></h1>
-                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, our observation system for tracking potential hazards like slip, trip, and fall conditions.</p>
+                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, (Hazard Education, Recording, and Observation). Hero is the University of Kentucky's observation system for tracking potential hazards like slip, trip, and fall conditions.</p>
                 <p class="lead">
 				<?php
 				
@@ -208,16 +208,26 @@
 						echo $access_obj->get_name_f();
 				?>, thanks for participating! Please complete the following steps:</p>
                		
-                	<p>1. Watch this video below for information about slips, trips, falls, and how to prevent them.</p>
-              		<p><iframe width="560" height="315" src="https://www.youtube.com/embed/Bckj4zErK-Q" frameborder="0" allowfullscreen></iframe></p>
-                	<p>2. Fill out <a href="<a href="observation_target_read.php?id=-1">the online observation form</a> and submit. Follow your area&rsquo;s   process for correcting issues whether that is communicating it to your   supervisor, submitting a work order, or correcting it yourself. EHS   will review and assist in correcting items that you might not know   exactly how to handle.</p>
-               
+               		<hr>
+                	<h2>Step 1.</h2>
+                	<p class="lead">Watch this video below for information about slips, trips, falls, and how to prevent them.</p>
+                	
+       		  <p><iframe width="560" height="315" src="https://www.youtube.com/embed/Bckj4zErK-Q" frameborder="0" allowfullscreen></iframe></p>
+                	
+                	<hr>
+                	<h2>Step 2.</h2>
+                	<p class="lead">Walk through your area and use <a href="observation_target_read.php?id=-1" target="_new">this online observation form with your mobile device to</a> note and record any hazards. Follow your area&rsquo;s   process for correcting issues whether that is communicating it to your   supervisor, submitting a work order, or correcting it yourself. EHS   will review and assist in correcting items that you might not know   exactly how to handle.</p>
+                	
+                	<hr>
+                	<h2>Step 3 (optional).</h2>
+                	<p class="lead">Optionally, you may use  <a href="observation_target_print.php?id=-1" target="_new">this printable form</a> to make notes of hazards while walking your area. You will still need to fill out the online observation form from step 2 when your walk-through is complete.</p>
+               		
                 <?php
 					}
 					else
 					{
 				?>
-       		  <p class="lead">In order to use <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
+       		  <p class="lead">To get started using <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
             		
                     	<p><?php echo $access_obj->dialog(); ?></p>
                     	
