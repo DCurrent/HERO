@@ -269,14 +269,14 @@
             <?php echo $obj_navigation_main->generate_markup_nav(); ?>                                                                                
             <div class="page-header">           
                 <h1><?php echo LOCAL_BASE_TITLE; ?></h1>
-                <p class="lead">This screen allows you to add or edit an observation for any slip, trip, or fall hazards. Enter an observation set using the form below.</p>
+                <p class="lead">This screen allows you to add or edit an observation for any slip, trip, or fall hazards. Enter an observation set using the form below. When you are finished, press the yellow save button to submit your results.</p>
                 <?php require(__DIR__.'/source/common_includes/revision_alert.php'); ?>
             </div>
             
             <form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">           
            		<?php $obj_navigation_rec->generate_button_list(); ?>
-                <?php echo $obj_navigation_rec->get_markup_cmd_save_block(); ?>
-                <hr />
+                <?php //echo $obj_navigation_rec->get_markup_cmd_save_block(); ?>
+                
                 
                 <!-- Moved to bottom for customer use -->
                 <?php // require(__DIR__.'/source/common_includes/details_field.php'); ?>
