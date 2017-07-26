@@ -78,7 +78,8 @@
 												@param_details 			= ?,
 												@param_building_code	= ?,
 												@param_room_code		= ?,
-												@param_observation_results	= ?)}');
+												@param_observation_results	= ?,
+												@param_update_account = ?)}');
 												
 		$params = array(array('<root><row id="'.$_main_data->get_id().'"/></root>', 		SQLSRV_PARAM_IN),
 					array($access_obj->get_id(), 				SQLSRV_PARAM_IN),
@@ -87,7 +88,8 @@
 					array($_main_data->get_details(),		SQLSRV_PARAM_IN),
 					array($_main_data->get_building_code(),	SQLSRV_PARAM_IN),
 					array($_main_data->get_room_code(),		SQLSRV_PARAM_IN),
-					array($_sub_results_data->xml(),		SQLSRV_PARAM_IN));
+					array($_sub_results_data->xml(),		SQLSRV_PARAM_IN),
+					array($access_obj->get_account(),		SQLSRV_PARAM_IN));
 		
 		//echo $_main_data->get_details();
 		
