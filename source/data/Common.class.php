@@ -36,13 +36,15 @@
 			$details			= NULL,
 			$item				= NULL,	// Used to link entry to a specfic item in a seperate list.
 			$label				= NULL;
-				
+		
 		// Populate members from $_REQUEST.
 		public function populate_from_request($target = NULL)
 		{	
 			$methods	= NULL;
 			$method		= NULL;
 			$key		= NULL;
+			
+			//var_dump($_REQUEST);
 			
 			if(!is_object($target))
 			{
@@ -72,8 +74,8 @@
 				{	
 					
 					// Debugging
-					// echo '<br /><br />'.$method.'<br />';					
-					// var_dump($_REQUEST[$key]);
+					 //echo '<br /><br />'.$method.'<br />';					
+					 //var_dump($_REQUEST[$key]);
 					
 					$target->$method($_REQUEST[$key]);					
 				}

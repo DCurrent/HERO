@@ -4,7 +4,7 @@
 	require(__DIR__.'/source/common_functions/common_security.php');
 	
 	const LOCAL_STORED_PROC_NAME 	= 'stf_observation_target_read'; 	// Used to call stored procedures for the main record set of this script.
-	const LOCAL_BASE_TITLE 			= 'Observation';	// Title display, button labels, instruction inserts, etc.
+	const LOCAL_BASE_TITLE 			= 'Observation';					// Title display, button labels, instruction inserts, etc.
 	$primary_data_class				= '\data\Area';
 	
 	// common_list
@@ -68,7 +68,7 @@
 		$_sub_results_data = new \data\ObservationSource();						
 		$_sub_results_data->populate_from_request();
 		
-		echo $_sub_results_data->xml().'<br />';
+		//echo $_sub_results_data->xml().'<br />';
 		
 		// Call update stored procedure.
 		$query->set_sql('{call stf_observation_target_update(@param_id			= ?,
@@ -88,6 +88,8 @@
 					array($_main_data->get_building_code(),	SQLSRV_PARAM_IN),
 					array($_main_data->get_room_code(),		SQLSRV_PARAM_IN),
 					array($_sub_results_data->xml(),		SQLSRV_PARAM_IN));
+		
+		//echo $_main_data->get_details();
 		
 		//var_dump($_REQUEST);
 		
@@ -499,7 +501,7 @@
                        	<span class=".small">If you have any other notes or observations you would like to include, feel free to add them here.</span>
                        	<br />
                        	&nbsp;
-                        <textarea class="form-control wysiwyg" rows="5" name="details" id="details"><?php echo $_main_data->get_details(); ?></textarea>
+                        <textarea class="form-control" rows="5" name="details" id="details"><?php echo $_main_data->get_details(); ?></textarea>
                     </div>
                 </div> 
                
