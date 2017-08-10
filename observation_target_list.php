@@ -294,16 +294,16 @@
                         <tr>
                             <th><a href="<?php echo $sorting->sort_url(2); ?>">Revision <?php echo $sorting->sorting_markup(2); ?></a></th>
                             <th><a href="<?php echo $sorting->sort_url(1); ?>">Label <?php echo $sorting->sorting_markup(1); ?></a></th>
-                            <th><a href="<?php //echo $sorting->sort_url(1); ?>">Area <?php //echo $sorting->sorting_markup(1); ?></a></th>
-                            <th><a href="<?php //echo $sorting->sort_url(1); ?>">Author <?php //echo $sorting->sorting_markup(1); ?></a></th>             
+                            <th><a href="<?php echo $sorting->sort_url(3); ?>">Area <?php echo $sorting->sorting_markup(3); ?></a></th>
+                            <th><a href="<?php echo $sorting->sort_url(4); ?>">Author <?php echo $sorting->sorting_markup(4); ?></a></th>             
                         </tr>
                     </thead>
                     <tfoot>
                     	<tr>
                             <th><a href="<?php echo $sorting->sort_url(2); ?>">Revision <?php echo $sorting->sorting_markup(2); ?></a></th>
                             <th><a href="<?php echo $sorting->sort_url(1); ?>">Label <?php echo $sorting->sorting_markup(1); ?></a></th>
-                            <th><a href="<?php //echo $sorting->sort_url(1); ?>">Area <?php //echo $sorting->sorting_markup(1); ?></a></th>
-                            <th><a href="<?php //echo $sorting->sort_url(1); ?>">Author <?php //echo $sorting->sorting_markup(1); ?></a></th>
+                            <th><a href="<?php echo $sorting->sort_url(3); ?>">Area <?php echo $sorting->sorting_markup(3); ?></a></th>
+                            <th><a href="<?php echo $sorting->sort_url(4); ?>">Author <?php echo $sorting->sorting_markup(4); ?></a></th>
                         </tr>
                     </tfoot>
                     <tbody>                        
