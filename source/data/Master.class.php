@@ -9,7 +9,7 @@
 	{
 		// Accessors
 		function get_active();
-		function get_create_account();
+		function get_create_by_account();
 		function get_create_by();
 		function get_create_host();
 		function get_create_etime();
@@ -17,7 +17,7 @@
 		function get_fk_id();
 		function get_id();
 		function get_id_key();
-		function get_update_account();
+		function get_update_by_account();
 		function get_update_by();
 		function get_update_host();
 		function get_update_etime();
@@ -26,7 +26,7 @@
 		
 		// Mutators	
 		function set_active($value);
-		function set_create_account($value);
+		function set_create_by_account($value);
 		function set_create_by($value);
 		function set_create_host($value);
 		function set_create_etime($value);
@@ -34,7 +34,7 @@
 		function set_fk_id($value);
 		function set_id($value);
 		function set_id_key($value);
-		function set_update_account($value);
+		function set_update_by_account($value);
 		function set_update_by($value);
 		function set_update_host($value);
 		function set_update_etime($value);
@@ -46,7 +46,7 @@
 	{
 		protected
 			$active			= NULL,	// TRUE = Flags a version of a record as being the active and in use - only one may be active, will usually be the newest.
-			$create_account	= NULL, // Account active (by name) when record was initially created.
+			$create_by_account	= NULL, // Account active (by name) when record was initially created.
 			$create_by		= NULL,	// Account active when record was initially created.
 			$create_host	= NULL,	// Host active when version was initially created. Usually an IP address.
 			$create_etime	= NULL,	// Elapsed time in seconds since initial creation.
@@ -54,7 +54,7 @@
 			$fk_id			= NULL,	// Foreign key for linking one to many record relationships.
 			$id				= NULL,	// Record key. All versions of a given record share one key.
 			$id_key			= NULL,	// Primary key - uniquely identifies every entry in table.
-			$update_account	= NULL,	// Account active (by name) when version was last modified.
+			$update_by_account	= NULL,	// Account active (by name) when version was last modified.
 			$update_by		= NULL,	// Account active when version was last modified.
 			$update_host	= NULL,	// Host active when version was ilast modified. Usually an IP address.
 			$update_etime	= NULL,	// Elapsed time in seconds since last modification.
@@ -66,9 +66,9 @@
 			return $this->active;
 		} 
 		
-		public function get_create_account()
+		public function get_create_by_account()
 		{
-			return $this->create_account;
+			return $this->create_by_account;
 		}
 		
 		public function get_create_by()
@@ -106,9 +106,9 @@
 			return $this->id_key;
 		}
 		
-		public function get_update_account()
+		public function get_update_by_account()
 		{
-			return $this->update_account;
+			return $this->update_by_account;
 		}
 		
 		public function get_update_by()
@@ -137,9 +137,9 @@
 			$this->active = $value;
 		} 
 		
-		public function set_create_account($value)
+		public function set_create_by_account($value)
 		{
-			$this->create_account = $value;
+			$this->create_by_account = $value;
 		}
 		
 		public function set_create_by($value)
@@ -196,9 +196,9 @@
 			$this->id_key = $value;			
 		}
 		
-		public function set_update_account($value)
+		public function set_update_by_account($value)
 		{
-			$this->update_account = $value;
+			$this->update_by_account = $value;
 		}
 		
 		public function set_update_by($value)

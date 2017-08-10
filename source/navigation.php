@@ -66,7 +66,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>                        
                         </button>
-                        <a class="navbar-brand" href="<?php echo $this->directory_prime; ?>"><?php echo APPLICATION_SETTINGS::NAME; ?></a>
+                        <a class="navbar-brand" href="http://ehs.uky.edu">Environmental Health and Safety,</a><a class="navbar-brand" href="<?php echo $this->directory_prime; ?>"><?php echo APPLICATION_SETTINGS::NAME; ?></a>
                     </div><!--#main_nav_header-->
                     
                     <div class="collapse navbar-collapse" id="nav_main">
