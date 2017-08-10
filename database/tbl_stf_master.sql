@@ -1,7 +1,7 @@
 USE [EHSINFO]
 GO
 
-/****** Object:  Table [dbo].[tbl_stf_master]    Script Date: 2017-07-26 18:40:32 ******/
+/****** Object:  Table [dbo].[tbl_stf_master]    Script Date: 2017-08-10 08:58:19 ******/
 SET ANSI_NULLS ON
 GO
 
@@ -14,11 +14,17 @@ CREATE TABLE [dbo].[tbl_stf_master](
 	[active] [bit] NOT NULL,
 	[create_by] [int] NOT NULL,
 	[create_by_account] [varchar](50) NULL,
+	[create_by_name_f] [varchar](50) NULL,
+	[create_by_name_l] [varchar](50) NULL,
+	[create_by_name_m] [varchar](50) NULL,
 	[create_host] [varchar](50) NOT NULL,
 	[create_time] [datetime2](7) NOT NULL,
 	[create_etime]  AS (datediff(second,[create_time],getdate())),
 	[update_by] [int] NOT NULL,
 	[update_by_account] [varchar](50) NULL,
+	[update_by_name_f] [varchar](50) NULL,
+	[update_by_name_l] [varchar](50) NULL,
+	[update_by_name_m] [varchar](50) NULL,
 	[update_host] [varchar](50) NOT NULL,
 	[update_time] [datetime2](7) NOT NULL,
 	[update_etime]  AS (datediff(second,[update_time],getdate())),
