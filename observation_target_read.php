@@ -117,6 +117,22 @@
 		$query->get_line_params()->set_class_name('\data\Common');
 		$_main_data = $query->get_line_object();
 		
+		// Set up and send email alert.
+			$address  = 'dvcask2@uky.edu, mla263@uky.edu';
+
+			$subject = MAILING::SUBJECT;
+			$body = 'An observation has been created or updated. <a href="http://ehs.uky.edu/apps/hero/observation_target_read.php?id='.$_main_data->get_id().'">Click here</a> to view details.';
+
+			$headers   = array();
+			$headers[] = "MIME-Version: 1.0";
+			$headers[] = "Content-type: text/html; charset=iso-8859-1";
+			if(MAILING::FROM)	$headers[] = "From: ".MAILING::FROM;
+			if(MAILING::BCC)	$headers[] = "Bcc: ".MAILING::BCC;
+			if(MAILING::CC) 	$headers[] = "Cc: ".MAILING::CC;	
+
+			// Run mail function.
+			mail($address, MAILING::SUBJECT.' - Observation Alert', $body, implode("\r\n", $headers));
+		
 		// Now that save operation has completed, reload page using ID from
 		// database. This ensures the ID is always up to date, even with a new
 		// or copied record.
