@@ -7,3 +7,6 @@
 [submodule "source/dc/nahoni"]
 	path = source/dc/nahoni
 	url = https://github.com/dcurrent/nahoni
+[submodule "source/dc/stoeckl"]
+	path = source/dc/stoeckl
+	url = https://github.com/dcurrent/stoeckl
