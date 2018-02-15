@@ -58,7 +58,7 @@
 		$query 	= new \dc\yukon\Database();
 		
 		// Set up account info.
-		$access_obj = new \dc\access\status();
+		$access_obj = new \dc\stoeckl\status();
 				
 		// Initialize main data class and populate it from
 		// post variables.
@@ -99,7 +99,7 @@
 		$query 	= new \dc\yukon\Database();
 		
 		// Set up account info.
-		$access_obj = new \dc\access\status();
+		$access_obj = new \dc\stoeckl\status();
 				
 		// Initialize main data class and populate it from
 		// post variables.

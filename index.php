@@ -118,7 +118,7 @@
 	
 	$page_obj = new \dc\cache\PageCache();
 	
-	$access_obj_process = new \dc\access\process();
+	$access_obj_process = new \dc\stoeckl\process();
 	$access_obj_process->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);	
 	$access_obj_process->process_control();
 	
@@ -127,7 +127,7 @@
 	//var_dump($_SESSION);
 	
 	//Get and verify log in status.
-	$access_obj = new \dc\access\status();
+	$access_obj = new \dc\stoeckl\status();
 	$access_obj->get_config()->set_authenticate_url(APPLICATION_SETTINGS::DIRECTORY_PRIME);	
 	$access_obj->verify();
 	
@@ -245,7 +245,7 @@
                             
                             <br>
                             
-                            <button type="submit" name="access_action" value="<?php echo \dc\access\ACTION::LOGIN; ?>" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                            <button type="submit" name="access_action" value="<?php echo \dc\stoeckl\ACTION::LOGIN; ?>" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</button>
                         </form>
             
                 <?php

@@ -4,7 +4,7 @@
 	function common_delete()
 	{
 		// Set up account info.
-		$access_obj = new \dc\access\status();
+		$access_obj = new \dc\stoeckl\status();
 		
 		// Initialize database query object.
 		$query 	= new \dc\yukon\Database();
