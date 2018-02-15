@@ -22,7 +22,7 @@
 			$request_list = $_REQUEST['list'];
 		}
 		
-		$database = new \dc\yukon\Database();
+		$database = new \dc\yukon\Database($yukon_connection);
 		
 		$_main_data = new \dc\application\CommonEntry();	
 		

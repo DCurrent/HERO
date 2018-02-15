@@ -62,7 +62,7 @@
 			$this->data_common_entry->populate_from_request();
 			
 			// Initialize database query object.
-			$database 	= new \dc\yukon\Database();
+			$database 	= new \dc\yukon\Database($yukon_connection);
 			
 			// Set up primary query with parameters and arguments.
 			$database->set_sql('{call '.DEFAULTS::PROCEDURE.'(@param_filter_id = ?)}');

@@ -15,7 +15,7 @@
 		
 	
 		// Initialize database query object.
-		$query 	= new \dc\yukon\Database();
+		$query 	= new \dc\yukon\Database($yukon_connection);
 		
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();
@@ -84,7 +84,7 @@
 	common_check_action($obj_navigation_rec->get_action());
 	
 	// Initialize database query object.
-	$query 	= new \dc\yukon\Database();
+	$query 	= new \dc\yukon\Database($yukon_connection);
 	
 	// Initialize a blank main data object.
 	$primary_data_class = PRIMARY_DATA_CLASS;

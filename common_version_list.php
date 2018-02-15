@@ -21,7 +21,7 @@
 			return $result;
 		}
 		// Initialize database query object.
-		$database 	= new \dc\yukon\Database();
+		$database 	= new \dc\yukon\Database($yukon_connection);
 		
 		// Set up primary query with parameters and arguments.
 		$database->set_sql('{call config_form(@param_filter_id = ?)}');
@@ -146,7 +146,7 @@
 	$navigation_obj->generate_markup_footer();	
 	
 	// Set up database.
-	$query = new \dc\yukon\Database();
+	$query = new \dc\yukon\Database($yukon_connection);
 		
 	$paging = new \dc\recordnav\Paging();
 	$paging->set_row_max(APPLICATION_SETTINGS::PAGE_ROW_MAX);	

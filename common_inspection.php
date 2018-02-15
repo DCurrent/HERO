@@ -18,7 +18,7 @@
 			// --Status
 			
 			// Set up database.
-			$form_common_query = new \dc\yukon\Database();			
+			$form_common_query = new \dc\yukon\Database($yukon_connection);			
 			
 			// --Accounts (Inspector)
 			$_obj_field_source_account_list = new \data\Account();
@@ -336,7 +336,7 @@
                                     $query_audit_items_param_category 	= NULL;		
                                     
                                     // Set up a query object and send SQL string.
-                                    $query_audit_items = new \dc\yukon\Database();
+                                    $query_audit_items = new \dc\yukon\Database($yukon_connection);
                                     $query_audit_items->set_sql('{call inspection_question_list_select(@category 	= ?,
                                                                                         @inclusion	= ?)}');
                                     

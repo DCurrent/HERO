@@ -98,7 +98,7 @@
 	$navigation_obj = new class_navigation();
 	
 	// Set up database.
-	$query = new \dc\yukon\Database();
+	$query = new \dc\yukon\Database($yukon_connection);
 		
 	$paging = new \dc\recordnav\Paging();
 	$paging->set_row_max(APPLICATION_SETTINGS::PAGE_ROW_MAX);

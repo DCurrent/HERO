@@ -7,7 +7,7 @@
 		$access_obj = new \dc\stoeckl\status();
 		
 		// Initialize database query object.
-		$query 	= new \dc\yukon\Database();
+		$query 	= new \dc\yukon\Database($yukon_connection);
 		
 		// Initialize main data class and populate it from
 		// post variables. All we need is the ID, so

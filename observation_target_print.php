@@ -24,7 +24,7 @@
 	$page_obj = new \dc\cache\PageCache();
 	
 	// Initialize database query object.
-	$query 	= new \dc\yukon\Database();
+	$query 	= new \dc\yukon\Database($yukon_connection);
 	
 	// Initialize a blank main data object.
 	$_main_data = new $primary_data_class();	

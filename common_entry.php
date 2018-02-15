@@ -55,7 +55,7 @@
 	function action_save($_layout = NULL)
 	{		
 		// Initialize database query object.
-		$query 	= new \dc\yukon\Database();
+		$query 	= new \dc\yukon\Database($yukon_connection);
 		
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();
@@ -96,7 +96,7 @@
 	function action_delete($_layout = NULL)
 	{
 		// Initialize database query object.
-		$query 	= new \dc\yukon\Database();
+		$query 	= new \dc\yukon\Database($yukon_connection);
 		
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();
@@ -172,7 +172,7 @@
 	}
 	
 	// Initialize database query object.
-	$query 	= new \dc\yukon\Database();
+	$query 	= new \dc\yukon\Database($yukon_connection);
 	
 	// Class name has to be populated into local var to
 	// be instantiated.
