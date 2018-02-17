@@ -27,7 +27,7 @@
 		$_main_data->populate_from_request();
 	
 		// Call update stored procedure.
-		$query->set_sql('CREATE TABLE [dbo].[@param_table_name = ?](
+		$yukon_database->set_sql('CREATE TABLE [dbo].[@param_table_name = ?](
 	[id_key] [int] NOT NULL,
 	[label] [varchar](50) NULL,
 	[details] [varchar](max) NULL,
@@ -47,15 +47,15 @@ ALTER TABLE [dbo].[tbl_config_table] CHECK CONSTRAINT [FK_tbl_config_table_tbl_m
 												
 		$params = array(array('tbl_config_table', 		SQLSRV_PARAM_IN));
 		
-		$query->set_params($params);			
-		$query->query();
+		$yukon_database->set_params($params);			
+		$yukon_database->query();
 		
 		// Repopulate main data object with results from merge query.
 		// We can use common data here because all we need
 		// is the ID for redirection.
 		
-		//$query->get_line_params()->set_class_name('\data\Common');
-		//$_main_data = $query->get_line_object();
+		//$yukon_database->get_line_params()->set_class_name('\data\Common');
+		//$_main_data = $yukon_database->get_line_object();
 		
 		// Now that save operation has completed, reload page using ID from
 		// database. This ensures the ID is always up to date, even with a new
@@ -81,9 +81,6 @@ ALTER TABLE [dbo].[tbl_config_table] CHECK CONSTRAINT [FK_tbl_config_table_tbl_m
 	// another ID.
 	common_check_action($obj_navigation_rec->get_action());
 	
-	// Initialize database query object.
-	$query 	= new \dc\yukon\Database($yukon_connection);
-	
 	// Initialize a blank main data object.
 	$primary_data_class = PRIMARY_DATA_CLASS;
 	$_main_data = new $primary_data_class();	
@@ -93,24 +90,24 @@ ALTER TABLE [dbo].[tbl_config_table] CHECK CONSTRAINT [FK_tbl_config_table_tbl_m
 	$_main_data->populate_from_request();
 	
 	// Set up primary query with parameters and arguments.
-	$query->set_sql('{call '.LOCAL_STORED_PROC_NAME.'(@param_filter_id = ?,
+	$yukon_database->set_sql('{call '.LOCAL_STORED_PROC_NAME.'(@param_filter_id = ?,
 									@param_filter_id_key = ?)}');
 	$params = array(array($_main_data->get_id(), 		SQLSRV_PARAM_IN),
 					array($_main_data->get_id_key(), 	SQLSRV_PARAM_IN));
 
 	// Apply arguments and execute query.
-	$query->set_params($params);
-	$query->query();
+	$yukon_database->set_params($params);
+	$yukon_database->query_run();
 	
 	// Get navigation record set and populate navigation object.		
-	$query->get_line_params()->set_class_name('\dc\recordnav\RecordNav');	
-	if($query->get_row_exists() === TRUE) $obj_navigation_rec = $query->get_line_object();	
+	$yukon_database->get_line_params()->set_class_name('\dc\recordnav\RecordNav');	
+	if($yukon_database->get_row_exists() === TRUE) $obj_navigation_rec = $yukon_database->get_line_object();	
 	
 	// Get primary data record set.	
-	$query->get_next_result();
+	$yukon_database->get_next_result();
 	
-	$query->get_line_params()->set_class_name(PRIMARY_DATA_CLASS);	
-	if($query->get_row_exists() === TRUE) $_main_data = $query->get_line_object();		
+	$yukon_database->get_line_params()->set_class_name(PRIMARY_DATA_CLASS);	
+	if($yukon_database->get_row_exists() === TRUE) $_main_data = $yukon_database->get_line_object();		
 	
 ?>
 

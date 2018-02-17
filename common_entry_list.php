@@ -96,9 +96,6 @@
 	
 	// Set up navigaiton.
 	$navigation_obj = new class_navigation();
-	
-	// Set up database.
-	$query = new \dc\yukon\Database($yukon_connection);
 		
 	$paging = new \dc\recordnav\Paging();
 	$paging->set_row_max(APPLICATION_SETTINGS::PAGE_ROW_MAX);
@@ -106,7 +103,7 @@
 	// Record navigation.
 	$obj_navigation_rec = new \dc\recordnav\RecordNav();
 	
-	$query->set_sql('{call '.$_layout->get_main_sql_name().'_list(@param_page_current 		= ?,														 
+	$yukon_database->set_sql('{call '.$_layout->get_main_sql_name().'_list(@param_page_current 		= ?,														 
 										@param_page_rows 	= ?,
 										@param_sort_field	= ?,
 										@param_sort_order	= ?,
@@ -124,19 +121,19 @@
 	//var_dump($params);
 	//exit;
 
-	$query->set_params($params);
-	$query->query();
+	$yukon_database->set_params($params);
+	$yukon_database->query_run();
 	
-	$query->get_line_params()->set_class_name($_layout->get_main_object_name());
-	$_obj_data_main_list = $query->get_line_object_list();
+	$yukon_database->get_line_params()->set_class_name($_layout->get_main_object_name());
+	$_obj_data_main_list = $yukon_database->get_line_object_list();
 
 	// --Paging
-	$query->get_next_result();
+	$yukon_database->get_next_result();
 	
-	$query->get_line_params()->set_class_name('\dc\recordnav\Paging');
+	$yukon_database->get_line_params()->set_class_name('\dc\recordnav\Paging');
 	
 	//$_obj_data_paging = new \dc\recordnav\Paging();
-	if($query->get_row_exists()) $paging = $query->get_line_object();
+	if($yukon_database->get_row_exists()) $paging = $yukon_database->get_line_object();
 ?>
 
 <!DOCtype html>

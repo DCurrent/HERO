@@ -1,13 +1,10 @@
 <?php
 	
 	// Delete current record.
-	function common_delete()
+	function common_delete($yukon_database)
 	{
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();
-		
-		// Initialize database query object.
-		$query 	= new \dc\yukon\Database($yukon_connection);
 		
 		// Initialize main data class and populate it from
 		// post variables. All we need is the ID, so
@@ -16,7 +13,7 @@
 		$_main_data->populate_from_request();
 			
 		// Call and execute delete SP.
-		$query->set_sql('{call master_delete(@id = ?,													 
+		$yukon_database->set_sql('{call master_delete(@id = ?,													 
 								@update_by	= ?, 
 								@update_ip 	= ?)}');
 		
@@ -25,8 +22,8 @@
 					array($access_obj->get_ip(), 			SQLSRV_PARAM_IN));
 		
 					
-		$query->set_params($params);
-		$query->query();	
+		$yukon_database->set_params($params);
+		$yukon_database->query_run();	
 		
 		// Refrsh page.
 		header('Location: '.$_SERVER['PHP_SELF']);

@@ -1,8 +1,6 @@
 <?php
-	function common_save()
-	{		
-		// Initialize database query object.
-		$query 	= new \dc\yukon\Database($yukon_connection);
+	function common_save($yukon_database)
+	{
 		
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();
@@ -13,7 +11,7 @@
 		$_main_data->populate_from_request();
 			
 		// Call update stored procedure.
-		$query->set_sql('{call '.LOCAL_STORED_PROC_NAME.'_update(@id			= ?,
+		$yukon_database->set_sql('{call '.LOCAL_STORED_PROC_NAME.'_update(@id			= ?,
 												@log_update_by	= ?, 
 												@log_update_ip 	= ?,										 
 												@label 			= ?,
@@ -25,13 +23,13 @@
 					array($_main_data->get_label(), 		SQLSRV_PARAM_IN),						
 					array($_main_data->get_details(),		SQLSRV_PARAM_IN));
 		
-		$query->set_params($params);			
-		$query->query();
+		$yukon_database->set_params($params);			
+		$yukon_database->query_run();
 		
 		// Repopulate main data object with results from merge query.
 		// We can use common data here because all we need
 		// is the ID for redirection.
-		$query->get_line_params()->set_class_name('\data\Common');
+		$yukon_database->get_line_params()->set_class_name('\data\Common');
 		$_main_data = $query->get_line_object();
 		
 		// Now that save operation has completed, reload page using ID from
