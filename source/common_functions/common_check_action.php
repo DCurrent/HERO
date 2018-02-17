@@ -31,7 +31,7 @@ function common_check_action($action = NULL, $_layout = NULL)
 					
 		case \dc\recordnav\COMMANDS::SAVE:
 			
-			action_save();			
+			action_save($yukon_database);			
 			break;			
 	}
 }

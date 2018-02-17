@@ -10,12 +10,8 @@
 	const PRIMARY_DATA_CLASS		= '\data\ConfigCommonEntry';
 		
 	// Save this record.
-	function action_save()
-	{		
-		
-	
-		// Initialize database query object.
-		$query 	= new \dc\yukon\Database($yukon_connection);
+	function action_save($yukon_database)
+	{
 		
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();

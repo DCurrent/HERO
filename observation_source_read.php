@@ -127,12 +127,12 @@
 			
 		case \dc\recordnav\COMMANDS::DELETE:						
 			
-			action_delete($_layout);	
+			action_delete($_layout, $yukon_database);	
 			break;				
 					
 		case \dc\recordnav\COMMANDS::SAVE:
 			
-			action_save($_layout);			
+			action_save($_layout, $yukon_database);			
 			break;			
 	}
 	

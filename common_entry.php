@@ -90,11 +90,8 @@
 		header('Location: '.$_SERVER['PHP_SELF'].'?id_form='.$_layout->get_id().'&id='.$_main_data->get_id());
 	}
 	
-	function action_delete($_layout = NULL)
-	{
-		// Initialize database query object.
-		$query 	= new \dc\yukon\Database($yukon_connection);
-		
+	function action_delete($_layout = NULL, $yukon_database)
+	{		
 		// Set up account info.
 		$access_obj = new \dc\stoeckl\status();
 				
@@ -159,12 +156,12 @@
 			
 		case \dc\recordnav\COMMANDS::DELETE:						
 			
-			action_delete($_layout);	
+			action_delete($_layout, $yukon_database);	
 			break;				
 					
 		case \dc\recordnav\COMMANDS::SAVE:
 			
-			action_save($_layout);			
+			action_save($_layout, $yukon_database);			
 			break;			
 	}
 	

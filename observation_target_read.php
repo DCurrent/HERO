@@ -164,12 +164,12 @@
 			
 		case \dc\recordnav\COMMANDS::DELETE:						
 			
-			action_delete();	
+			action_delete($yukon_database);	
 			break;				
 					
 		case \dc\recordnav\COMMANDS::SAVE:
 			
-			action_save();			
+			action_save($yukon_database);			
 			break;			
 	}
 	
