@@ -138,7 +138,7 @@
 	$query->set_sql('{call account_list_inspector()}');
 	$query->query();		
 	
-	$query->get_line_params()->set_class_name('\data\Account');
+	$query->get_line_config()->set_class_name('\data\Account');
 	
 	$_obj_data_list = new \data\Account();
 	if($query->get_row_exists() === TRUE) $_obj_data_list = $query->get_line_object_list();

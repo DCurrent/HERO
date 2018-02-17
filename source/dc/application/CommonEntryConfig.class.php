@@ -70,13 +70,13 @@
 			$params = array(array($this->data_common_entry->get_id_form(), SQLSRV_PARAM_IN));	
 						
 			// Apply arguments and execute query.
-			$database->set_params($params);
+			$database->set_param_array($params);
 			$database->query();
 			
 			// Skip navigation data and get primary data record set.	
 			$database->get_next_result();
 			
-			$database->get_line_params()->set_class_name(__NAMESPACE__.'\CommonEntry');	
+			$database->get_line_config()->set_class_name(__NAMESPACE__.'\CommonEntry');	
 			
 			if($database->get_row_exists() === TRUE) 
 			{

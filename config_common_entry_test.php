@@ -43,14 +43,14 @@ ALTER TABLE [dbo].[tbl_config_table] CHECK CONSTRAINT [FK_tbl_config_table_tbl_m
 												
 		$params = array(array('tbl_config_table', 		SQLSRV_PARAM_IN));
 		
-		$yukon_database->set_params($params);			
+		$yukon_database->set_param_array($params);			
 		$yukon_database->query();
 		
 		// Repopulate main data object with results from merge query.
 		// We can use common data here because all we need
 		// is the ID for redirection.
 		
-		//$yukon_database->get_line_params()->set_class_name('\data\Common');
+		//$yukon_database->get_line_config()->set_class_name('\data\Common');
 		//$_main_data = $yukon_database->get_line_object();
 		
 		// Now that save operation has completed, reload page using ID from
@@ -92,17 +92,17 @@ ALTER TABLE [dbo].[tbl_config_table] CHECK CONSTRAINT [FK_tbl_config_table_tbl_m
 					array($_main_data->get_id_key(), 	SQLSRV_PARAM_IN));
 
 	// Apply arguments and execute query.
-	$yukon_database->set_params($params);
+	$yukon_database->set_param_array($params);
 	$yukon_database->query_run();
 	
 	// Get navigation record set and populate navigation object.		
-	$yukon_database->get_line_params()->set_class_name('\dc\recordnav\RecordNav');	
+	$yukon_database->get_line_config()->set_class_name('\dc\recordnav\RecordNav');	
 	if($yukon_database->get_row_exists() === TRUE) $obj_navigation_rec = $yukon_database->get_line_object();	
 	
 	// Get primary data record set.	
 	$yukon_database->get_next_result();
 	
-	$yukon_database->get_line_params()->set_class_name(PRIMARY_DATA_CLASS);	
+	$yukon_database->get_line_config()->set_class_name(PRIMARY_DATA_CLASS);	
 	if($yukon_database->get_row_exists() === TRUE) $_main_data = $yukon_database->get_line_object();		
 	
 ?>

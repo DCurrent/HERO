@@ -29,13 +29,13 @@
 		$params = array(array($request_form, SQLSRV_PARAM_IN));	
 					
 		// Apply arguments and execute query.
-		$database->set_params($params);
+		$database->set_param_array($params);
 		$database->query();
 		
 		// Skip navigation data and get primary data record set.	
 		$database->get_next_result();
 		
-		$database->get_line_params()->set_class_name('\dc\application\CommonEntry');	
+		$database->get_line_config()->set_class_name('\dc\application\CommonEntry');	
 		
 		if($database->get_row_exists() === TRUE) 
 		{
@@ -154,16 +154,16 @@
 	//var_dump($params);
 	//exit;
 
-	$yukon_database->set_params($params);
+	$yukon_database->set_param_array($params);
 	$yukon_database->query_run();
 	
-	$yukon_database->get_line_params()->set_class_name($primary_data_class);
+	$yukon_database->get_line_config()->set_class_name($primary_data_class);
 	$_obj_data_main_list = $yukon_database->get_line_object_list();
 
 	// --Paging
 	$yukon_database->get_next_result();
 	
-	$yukon_database->get_line_params()->set_class_name('\dc\recordnav\Paging');
+	$yukon_database->get_line_config()->set_class_name('\dc\recordnav\Paging');
 	
 	//$_obj_data_paging = new \dc\recordnav\Paging();
 	if($yukon_database->get_row_exists()) $paging = $yukon_database->get_line_object();

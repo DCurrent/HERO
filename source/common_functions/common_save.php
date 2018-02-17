@@ -23,13 +23,13 @@
 					array($_main_data->get_label(), 		SQLSRV_PARAM_IN),						
 					array($_main_data->get_details(),		SQLSRV_PARAM_IN));
 		
-		$yukon_database->set_params($params);			
+		$yukon_database->set_param_array($params);			
 		$yukon_database->query_run();
 		
 		// Repopulate main data object with results from merge query.
 		// We can use common data here because all we need
 		// is the ID for redirection.
-		$yukon_database->get_line_params()->set_class_name('\data\Common');
+		$yukon_database->get_line_config()->set_class_name('\data\Common');
 		$_main_data = $query->get_line_object();
 		
 		// Now that save operation has completed, reload page using ID from

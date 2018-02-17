@@ -121,16 +121,16 @@
 	//var_dump($params);
 	//exit;
 
-	$yukon_database->set_params($params);
+	$yukon_database->set_param_array($params);
 	$yukon_database->query_run();
 	
-	$yukon_database->get_line_params()->set_class_name($_layout->get_main_object_name());
+	$yukon_database->get_line_config()->set_class_name($_layout->get_main_object_name());
 	$_obj_data_main_list = $yukon_database->get_line_object_list();
 
 	// --Paging
 	$yukon_database->get_next_result();
 	
-	$yukon_database->get_line_params()->set_class_name('\dc\recordnav\Paging');
+	$yukon_database->get_line_config()->set_class_name('\dc\recordnav\Paging');
 	
 	//$_obj_data_paging = new \dc\recordnav\Paging();
 	if($yukon_database->get_row_exists()) $paging = $yukon_database->get_line_object();

@@ -22,7 +22,7 @@
 					array($access_obj->get_ip(), 			SQLSRV_PARAM_IN));
 		
 					
-		$yukon_database->set_params($params);
+		$yukon_database->set_param_array($params);
 		$yukon_database->query_run();	
 		
 		// Refrsh page.
