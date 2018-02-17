@@ -200,7 +200,7 @@
 
 	// Apply arguments and execute query.
 	$yukon_database->set_param_array($params);
-	$yukon_database->query();
+	$yukon_database->query_run();
 	
 	// Get navigation record set and populate navigation object.		
 	$yukon_database->get_line_config()->set_class_name('\dc\recordnav\RecordNav');	
