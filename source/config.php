@@ -8,6 +8,9 @@
 			DIRECTORY_PRIME	= '/apps/hero',
 			TIME_FORMAT		= 'Y-m-d H:i:s',
 			PAGE_ROW_MAX	= 25;
+		
+		const
+			SESSION_PREFIX	= 'stf_';
 	}
 
 	abstract class DATABASE

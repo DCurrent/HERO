@@ -76,6 +76,7 @@
 		// Prepare session handler configuration.
 		$session_config = new \dc\nahoni\SessionConfig();
 		$session_config->set_database($yukon_database);
+		$session_config->set_sp_prefix(APPLICATION_SETTINGS::SESSION_PREFIX);
 
 		$session_handler = new \dc\nahoni\Session($session_config);
 		session_set_save_handler($session_handler, TRUE);	
