@@ -101,11 +101,10 @@
 		//	$res_i++;
 		//}
 		
-		//var_dump($result_array);
-		
+		//var_dump($result_array);	
 		//exit;
 		
-		$yukon_database->set_param_array($params);			
+		$yukon_database->set_param_array($params);	
 		$yukon_database->query_run();
 		
 		// Repopulate main data object with results from merge query.
