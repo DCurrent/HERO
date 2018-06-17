@@ -85,7 +85,7 @@
 		//exit;
 		
 		$yukon_database->set_param_array($params);			
-		$yukon_database->query();
+		$yukon_database->query_run();
 		
 		// Repopulate main data object with results from merge query.
 		// We can use common data here because all we need
@@ -132,7 +132,7 @@
 					
 		case \dc\recordnav\COMMANDS::SAVE:
 			
-			action_save($_layout, $yukon_database);			
+			action_save($yukon_database);			
 			break;			
 	}
 	
