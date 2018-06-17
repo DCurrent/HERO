@@ -91,8 +91,6 @@
 								<li class="dropdown">
 									<a class="dropdown-toggle <?php echo $class_add; ?>" data-toggle="dropdown" href="#">System<span class="caret"></span></a>
 									<ul class="dropdown-menu">
-										<li class="dropdown-header">Administration</li>
-											<li><a href="<?php echo $this->directory_prime; ?>/config_common_entry_list.php"><?php echo NAV_INDENT; ?>Common Entry Forms</a></li>
 										<li class="divider"></li>                                	
 										<li class="dropdown-header">Observations</li>                                    
 											<li><a href="<?php echo $this->directory_prime; ?>/observation_source_list.php"><?php echo NAV_INDENT; ?>Observation Items</a></li>                                    
