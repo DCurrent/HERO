@@ -213,12 +213,12 @@
 				echo ', '.$_layout->get_title();
             }?></title>        
         
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="source/bootstrap/style.css">
         <link rel="stylesheet" href="source/css/style.css" />
         <link rel="stylesheet" href="source/css/print.css" media="print" />
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>     
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>        
+        <script src="source/bootstrap/script.js"></script>        
         
         <!-- WYSIWYG Text boxes -->
 		<script type="text/javascript" src="source/javascript/tinymce/tinymce.min.js"></script>

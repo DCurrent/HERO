@@ -144,13 +144,13 @@
         <title><?php echo APPLICATION_SETTINGS::NAME. ', '.LOCAL_BASE_TITLE; ?> List</title>        
         
          <!-- CSS -->
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+        <link rel="stylesheet" href="source/bootstrap/style.css">
         <!--link rel="stylesheet" href="source/css/jquery.datetimepicker.min.css" /-->
         <link rel="stylesheet" href="source/css/style.css" />
         <link rel="stylesheet" href="source/css/print.css" media="print" />
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="source/bootstrap/script.js"></script>
         <script src="source/javascript/modernizr.js"></script>
         <script src="source/javascript/iChronofix.js"></script>       
     </head>
