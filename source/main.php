@@ -3,7 +3,14 @@
 	require(__DIR__.'/config.php');				// User defined settings.
 	require(__DIR__.'/navigation.php');	
 	
-	
+	// Ensure we're using https.
+	if(empty($_SERVER['HTTPS']) || $_SERVER['HTTPS'] == "off")
+	{
+    	$redirect = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    	header('HTTP/1.1 301 Moved Permanently');
+    	header('Location: ' . $redirect);
+    	exit();
+	}
 
 	// Load class using namespace.
 	function app_load_class($class_name) 
