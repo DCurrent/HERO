@@ -76,7 +76,8 @@
 												@param_building_code	= ?,
 												@param_room_code		= ?,
 												@param_observation_results	= ?,
-												@param_update_account = ?)}');
+												@param_update_account 	= ?,
+												@param_address 			= ?)}');
 												
 		$params = array(array('<root><row id="'.$_main_data->get_id().'"/></root>', 		SQLSRV_PARAM_IN),
 					array($access_obj->get_id(), 				SQLSRV_PARAM_IN),
@@ -86,7 +87,8 @@
 					array($_main_data->get_building_code(),	SQLSRV_PARAM_IN),
 					array($_main_data->get_room_code(),		SQLSRV_PARAM_IN),
 					array($_sub_results_data->xml(),		SQLSRV_PARAM_IN),
-					array($access_obj->get_account(),		SQLSRV_PARAM_IN));
+					array($access_obj->get_account(),		SQLSRV_PARAM_IN),
+					array($_main_data->get_address(),		SQLSRV_PARAM_IN));
 		
 		//echo $_main_data->get_details();
 		
@@ -516,7 +518,15 @@
                     </div>
                 </div> 
                
-                
+                <div class="form-group">  
+                    <label class="control-label col-sm-2" for="address">LED Wrist Strap</label>                    
+                    <div class="col-sm-10">
+                       	<span class=".small">Please tell us how would you like to receive your lighted wrist strap for making an observation. Be sure to enter a full address.</span>
+                       	<br />
+                       	&nbsp;
+                        <textarea class="form-control" rows="5" name="address" id="address"><?php echo $_main_data->get_address(); ?></textarea>
+                    </div>
+                </div>
                  
                 <hr />
                 <div class="form-group">
