@@ -17,11 +17,13 @@
 		function get_details();
 		function get_item();
 		function get_label();
+		function get_address();
 		
 		// Mutators
 		function set_details($value);
 		function set_item($value);
 		function set_label($value);
+		function set_address($value);
 		
 		// Operations
 		
@@ -33,6 +35,7 @@
 	class Common extends Master implements iCommon
 	{
 		protected
+			$address			= NULL,
 			$details			= NULL,
 			$item				= NULL,	// Used to link entry to a specfic item in a seperate list.
 			$label				= NULL;
@@ -82,6 +85,11 @@
 			}			
 		}		
 		
+		public function get_address()
+		{
+			return $this->address;
+		}
+		
 		public function get_label()
 		{
 			return $this->label;
@@ -97,6 +105,11 @@
 			return $this->details;
 		}
 	
+		public function set_address($value)
+		{
+			$this->address = $value;
+		}
+		
 		public function set_label($value)
 		{
 			$this->label = $value;	
