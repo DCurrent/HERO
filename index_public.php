@@ -184,28 +184,22 @@
                 <p class="lead">
 				<?php
 				
-					echo '<!--account:'.$access_obj->get_account().'-->';
-					echo '<!--id:'.$access_obj->get_id().'-->';
-					// Logged in?
-					if($access_obj->get_account())
-					{
 						// Get current hour in the 24 hour clock format.
 						$time = date('H');
 						
 						// Give user a greeting based on hour of the day.
 						if ($time < '12') 
 						{
-							echo 'Good morning ';
+							echo 'Good morning';
 						} 
 						else if ($time >= '12' && $time < '17') 
 						{
-							echo 'Good afternoon ';
+							echo 'Good afternoon';
 						} 
 						else if ($time >= "17") 
 						{
-							echo 'Good evening ';
+							echo 'Good evening';
 						}
-						echo $access_obj->get_name_f();
 				?>, thanks for participating! Please complete the following steps:</p>
                		
                		<hr>
@@ -221,36 +215,6 @@
                 	<hr>
                 	<h2>Step 3 (optional).</h2>
                 	<p class="lead">Optionally, you may use  <a href="observation_target_print.php?id=-1" target="_new">this printable form</a> to make notes of hazards while walking your area. You will still need to fill out the online observation form from step 2 when your walk-through is complete.</p>
-               		
-                <?php
-					}
-					else
-					{
-				?>
-       		  <p class="lead">To get started using <?php echo APPLICATION_SETTINGS::NAME; ?>, please log in using your <a href="#" data-toggle="modal" data-target="#help_link_blue">Link Blue</a> account and password.</p>
-            		
-                    	<p><?php echo $access_obj->dialog(); ?></p>
-                    	
-                        <!--Note: PHP self is nessesary to override any link vars.-->
-                        <form role="form" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input type="text" class="form-control" name="account" id="account" placeholder="Link Blue Account" required>
-                            </div>
-                            <br>
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                <input type="password" class="form-control" name="credential" id="credential" placeholder="Password" required>
-                            </div>
-                            
-                            <br>
-                            
-                            <button type="submit" name="access_action" value="<?php echo \dc\stoeckl\ACTION::LOGIN; ?>" class="btn btn-default"><span class="glyphicon glyphicon-log-in"></span> Login</button>
-                        </form>
-            
-                <?php
-					}					
-				?>
            	
            		<br />
            		&nbsp;
