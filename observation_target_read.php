@@ -526,8 +526,8 @@
                 <div class="form-group">  
                     <label class="control-label col-sm-2" for="address">LED Wrist Strap</label>       
 					
-					<p><span class=".small">Please tell us how you would like to obtain your LED slap bracelet for making an observation.</span></p>
-					
+					<span class=".small">Please tell us how you would like to obtain your LED slap bracelet for making an observation.</span>	
+				
 					<div class="col-sm-10">
 						<label class="radio-inline"><input type="radio" 
 							class	= ""
@@ -544,19 +544,23 @@
 							value	= "0"
 							required
 							<?php if($_main_data->get_address()){ echo ' checked'; } ?>>Please send to campus address.</label>   
-					</div>
-					
-					<div class="col-sm-10">
-                   	  
+					</div>				
+                </div>
+				
+				<!-- Address -->
+				<div class="form-group"> 
+					<label class="control-label col-sm-2" for="address"></label>
+					<div class="col-sm-10">                   	  
                    	  <p>&nbsp;</p>
                        	<p><span class=".small"> Be sure to enter a full address.</span>
                        	  <br />
                        	  &nbsp;
                        	  <textarea class="form-control" rows="5" name="address" id="address"><?php echo $_main_data->get_address(); ?></textarea>
                    	  </p>
-                    </div>
-					
+                    </div>					
                 </div>
+				<!-- /Address-->
+				
                  
                 <hr />
                 <div class="form-group">
