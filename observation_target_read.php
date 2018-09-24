@@ -547,8 +547,10 @@
 					</div>				
                 </div>
 				
+				
+				
 				<!-- Address -->
-				<div class="form-group"> 
+				<div class="form-group collapse"> 
 					<label class="control-label col-sm-2" for="address"></label>
 					<div class="col-sm-10">                   	  
                    	  <p>&nbsp;</p>
