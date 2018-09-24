@@ -547,14 +547,12 @@
 					</div>				
                 </div>
 				
-				
-				
 				<!-- Address -->
-				<div class="form-group collapse"> 
+				<div class="form-group collapse <?php if($_main_data->get_address()) echo 'in'; ?>"> 
 					<label class="control-label col-sm-2" for="address"></label>
 					<div class="col-sm-10">                   	  
                    	  <p>&nbsp;</p>
-                       	<p><span class=".small"> Be sure to enter a full address.</span>
+                       	<p><span class=".small"> Please enter a UK campus address.</span>
                        	  <br />
                        	  &nbsp;
                        	  <textarea class="form-control" rows="5" name="address" id="address"><?php echo $_main_data->get_address(); ?></textarea>
