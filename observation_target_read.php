@@ -520,7 +520,14 @@
                
 				<!-- Observation toggles. Current value: <?php echo $_observation_source_current->get_result(); ?>-->
 				<div class="form-group">	
-					Please tell us how you would like to obtain your LED slap bracelet for making an observation.
+					
+				</div>
+				
+                <div class="form-group">  
+                    <label class="control-label col-sm-2" for="address">LED Wrist Strap</label>       
+					
+					<p><span class=".small">Please tell us how you would like to obtain your LED slap bracelet for making an observation.</span></p>
+					
 					<div class="col-sm-10">
 						<label class="radio-inline"><input type="radio" 
 							class	= ""
@@ -528,7 +535,7 @@
 							id		= "in_person_0_1"
 							value	= "1"
 							required
-							<?php if($_observation_source_current->get_result()===1){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-up text-success" style="font-size:large;"></span></label>
+							<?php if(!$_main_data->get_address()){ echo ' checked'; } ?>>I will pick up in person.</label>
 
 						<label class="radio-inline"><input type	= "radio" 
 							class	= ""
@@ -536,14 +543,11 @@
 							id		= "in_person_0_0"
 							value	= "0"
 							required
-							<?php if($_observation_source_current->get_result()===0){ echo ' checked'; } ?>><span class="glyphicon glyphicon-thumbs-down text-danger" style="font-size:large;"></span></label>   
+							<?php if($_main_data->get_address()){ echo ' checked'; } ?>>Please send to campus address.</label>   
 					</div>
-				</div>
-				
-                <div class="form-group">  
-                    <label class="control-label col-sm-2" for="address">LED Wrist Strap</label>                    
-                    <div class="col-sm-10">
-                   	  <p><span class=".small">Please tell us how would you like to receive your LED slap bracelet for making an observation.</span></p>
+					
+					<div class="col-sm-10">
+                   	  
                    	  <p>&nbsp;</p>
                        	<p><span class=".small"> Be sure to enter a full address.</span>
                        	  <br />
@@ -551,6 +555,7 @@
                        	  <textarea class="form-control" rows="5" name="address" id="address"><?php echo $_main_data->get_address(); ?></textarea>
                    	  </p>
                     </div>
+					
                 </div>
                  
                 <hr />
