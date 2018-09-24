@@ -78,7 +78,24 @@
 												@param_observation_results	= ?,
 												@param_update_account 	= ?,
 												@param_address 			= ?)}');
-												
+		
+		$pickup_address = NULL;
+		
+		// Quick fix for the pickup in person field. If
+		// the in person option is checked, send a 
+		// NULL value to address to erase it.
+		if(isset($_REQUEST['in_person_0']))
+		{
+			if($_REQUEST['in_person_0']==1)
+			{
+				$pickup_address = NULL;
+			}
+			else
+			{
+				$pickup_address = $_main_data->get_address();
+			}
+		}
+		
 		$params = array(array('<root><row id="'.$_main_data->get_id().'"/></root>', 		SQLSRV_PARAM_IN),
 					array($access_obj->get_id(), 				SQLSRV_PARAM_IN),
 					array($access_obj->get_ip(), 			SQLSRV_PARAM_IN),
@@ -88,7 +105,7 @@
 					array($_main_data->get_room_code(),		SQLSRV_PARAM_IN),
 					array($_sub_results_data->xml(),		SQLSRV_PARAM_IN),
 					array($access_obj->get_account(),		SQLSRV_PARAM_IN),
-					array($_main_data->get_address(),		SQLSRV_PARAM_IN));
+					array($pickup_address,					SQLSRV_PARAM_IN));
 		
 		//echo $_main_data->get_details();
 		
@@ -557,7 +574,6 @@
 								alert('show');
 							} else 
 							{
-								$('pickup-address-field').value = null;
 							  	$('.pickup-address-container').collapse('hide');
 								alert('hide');
 							}
