@@ -543,12 +543,29 @@
 							id		= "in_person_0_0"
 							value	= "0"
 							required
-							<?php if($_main_data->get_address()){ echo ' checked'; } ?>>Please send to campus address.</label>   
+							<?php if($_main_data->get_address()){ echo ' checked'; } ?>>Please send to campus address.</label>  
+						
+						<script>
+						// Fire whenever an in person check value is modified.
+						$('.result_0_0').on('change', function() {
+
+							// If 0 (no) is checked, then display the solution field.
+							// Otherwise, collapse it. 
+							if($('#in_person_0_0').is(':checked')) {
+							  $('.pickup-address').collapse('show');
+								alert('show');
+							} else {
+							  $('.pickup-address').collapse('hide');
+								alert('hide');
+							}
+						  });
+					</script>
+						
 					</div>				
                 </div>
 				
 				<!-- Address -->
-				<div class="form-group collapse <?php if($_main_data->get_address()) echo 'in'; ?>"> 
+				<div class="form-group pickup-address collapse <?php if($_main_data->get_address()) echo 'in'; ?>"> 
 					<label class="control-label col-sm-2" for="address"></label>
 					<div class="col-sm-10">                   	  
                    	  <p>&nbsp;</p>
