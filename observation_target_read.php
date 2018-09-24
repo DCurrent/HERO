@@ -529,7 +529,7 @@
 					<span class=".small">Please tell us how you would like to obtain your LED slap bracelet for making an observation.</span>	
 				
 					<div class="col-sm-10">
-						<label class="radio-inline"><input type="radio" 
+						<label class="radio-inline in_person_pickup"><input type="radio" 
 							class	= ""
 							name	= "in_person_0"
 							id		= "in_person_0_1"
@@ -537,7 +537,7 @@
 							required
 							<?php if(!$_main_data->get_address()){ echo ' checked'; } ?>>I will pick up in person.</label>
 
-						<label class="radio-inline"><input type	= "radio" 
+						<label class="radio-inline in_person_pickup"><input type	= "radio" 
 							class	= ""
 							name	= "in_person_0" 
 							id		= "in_person_0_0"
@@ -547,15 +547,18 @@
 						
 						<script>
 						// Fire whenever an in person check value is modified.
-						$('.result_0_0').on('change', function() {
+						$('.in_person_pickup').on('change', function() {
 
 							// If 0 (no) is checked, then display the solution field.
 							// Otherwise, collapse it. 
-							if($('#in_person_0_0').is(':checked')) {
-							  $('.pickup-address').collapse('show');
+							if($('#in_person_0_0').is(':checked')) 
+							{
+								$('.pickup-address-container').collapse('show');
 								alert('show');
-							} else {
-							  $('.pickup-address').collapse('hide');
+							} else 
+							{
+								$('pickup-address-field').value = null;
+							  	$('.pickup-address-container').collapse('hide');
 								alert('hide');
 							}
 						  });
@@ -565,14 +568,14 @@
                 </div>
 				
 				<!-- Address -->
-				<div class="form-group pickup-address collapse <?php if($_main_data->get_address()) echo 'in'; ?>"> 
+				<div class="form-group pickup-address-container collapse <?php if($_main_data->get_address()) echo 'in'; ?>"> 
 					<label class="control-label col-sm-2" for="address"></label>
 					<div class="col-sm-10">                   	  
                    	  <p>&nbsp;</p>
                        	<p><span class=".small"> Please enter a UK campus address.</span>
                        	  <br />
                        	  &nbsp;
-                       	  <textarea class="form-control" rows="5" name="address" id="address"><?php echo $_main_data->get_address(); ?></textarea>
+                       	  <textarea class="form-control pickup-address-field" rows="5" name="address" id="address"><?php echo $_main_data->get_address(); ?></textarea>
                    	  </p>
                     </div>					
                 </div>
