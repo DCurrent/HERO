@@ -571,11 +571,9 @@
 							if($('#in_person_0_0').is(':checked')) 
 							{
 								$('.pickup-address-container').collapse('show');
-								alert('show');
 							} else 
 							{
 							  	$('.pickup-address-container').collapse('hide');
-								alert('hide');
 							}
 						  });
 					</script>
