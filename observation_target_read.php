@@ -541,11 +541,14 @@
 				</div>
 				
                 <div class="form-group">  
-                    <label class="control-label col-sm-2" for="address">LED Wrist Strap</label>       
-					
-					<span class=".small">Please tell us how you would like to obtain your LED slap bracelet for making an observation.</span>	
-				
-					<div class="col-sm-10">
+                    <label class="control-label col-sm-2" for="address">LED Wrist Strap</label>  				
+					<div class="col-sm-10">						
+						<span class=".small">Please tell us how you would like to obtain your LED slap bracelet for making an observation.</span>
+						<br />
+						<span class=".small">In person pickups are available at the EHS Building: 252 East Maxwell Street, Lexington KY.</span>
+						<br />
+                       	&nbsp;
+						
 						<label class="radio-inline in_person_pickup"><input type="radio" 
 							class	= ""
 							name	= "in_person_0"
@@ -563,20 +566,20 @@
 							<?php if($_main_data->get_address()){ echo ' checked'; } ?>>Please send to campus address.</label>  
 						
 						<script>
-						// Fire whenever an in person check value is modified.
-						$('.in_person_pickup').on('change', function() {
+							// Fire whenever an in person check value is modified.
+							$('.in_person_pickup').on('change', function() {
 
-							// If 0 (no) is checked, then display the solution field.
-							// Otherwise, collapse it. 
-							if($('#in_person_0_0').is(':checked')) 
-							{
-								$('.pickup-address-container').collapse('show');
-							} else 
-							{
-							  	$('.pickup-address-container').collapse('hide');
-							}
-						  });
-					</script>
+								// If 0 (no) is checked, then display the solution field.
+								// Otherwise, collapse it. 
+								if($('#in_person_0_0').is(':checked')) 
+								{
+									$('.pickup-address-container').collapse('show');
+								} else 
+								{
+									$('.pickup-address-container').collapse('hide');
+								}
+							  });
+						</script>
 						
 					</div>				
                 </div>
