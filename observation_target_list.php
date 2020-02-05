@@ -167,7 +167,7 @@
             
             <?php
             // Just a hack until database access list is ready.
-			if($current_account=='dvcask2' || $current_account=='lpoore0')
+			if($current_account=='dvcask2' || $current_account=='lpoore0'|| $current_account=='dwhibb0' || $current_account=='mla263')
 			{
 			?>
             

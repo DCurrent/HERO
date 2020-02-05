@@ -85,7 +85,8 @@
                            		if($this->access_obj->get_account()=='dvcask2' 
 								   	|| $this->access_obj->get_account()=='lpoore0' 
 								   	|| $this->access_obj->get_account()=='mla263'
-								  	|| $this->access_obj->get_account()=='dwhibb0')
+								  	|| $this->access_obj->get_account()=='dwhibb0'
+								    || $this->access_obj->get_account()=='asof224')
 								{
                            	?>
 								<li class="dropdown">

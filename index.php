@@ -180,7 +180,7 @@
             <?php echo $navigation_obj->get_markup_nav(); ?>                                                                                
             <div class="page-header">
                 <h1><?php echo APPLICATION_SETTINGS::NAME; ?></h1>
-                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, (Hazard Education, Recording, and Observation). HERO is the University of Kentucky's observation system for tracking potential hazards like slip, trip, and fall conditions.</p>
+                <p class="lead">Welcome to <?php echo APPLICATION_SETTINGS::NAME; ?>, (Hazard Education, Recording, and Observation). This is the University of Kentucky's observation system for tracking potential hazards like slip, trip, and fall conditions.</p>
                 <p class="lead">
 				<?php
 				

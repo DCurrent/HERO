@@ -78,7 +78,7 @@
         <div id="container" class="container">                                              
             <div class="page-header">           
                 <h1><?php echo LOCAL_BASE_TITLE; ?></h1>
-                <p class="lead">This printable observation form is provided for your convenience. Completed observations must be submitted with the HERO Application.</p>
+                <p class="lead">This printable observation form is provided for your convenience. Completed observations must be submitted with the <?php echo APPLICATION_SETTINGS::NAME; ?> Application.</p>
             </div>
             
           		<p class="lead">Lab/Area:&nbsp;_________________________</p>

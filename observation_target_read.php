@@ -151,7 +151,7 @@
 		// Now that save operation has completed, reload page using ID from
 		// database. This ensures the ID is always up to date, even with a new
 		// or copied record.
-		header('Location: '.$_SERVER['PHP_SELF'].'?id='.$_main_data->get_id()); 
+		header('Location: observation_target_confirm.php?id='.$_main_data->get_id()); 
 	}
 	
 	// Verify user access.

@@ -4,7 +4,7 @@
 	{
 		const
 			VERSION 		= '0.1.2',
-			NAME			= 'HERO',
+			NAME			= 'Slips, Trips, and Falls; Hazard Recognition',
 			DIRECTORY_PRIME	= '/apps/hero',
 			TIME_FORMAT		= 'Y-m-d H:i:s',
 			PAGE_ROW_MAX	= 25;
